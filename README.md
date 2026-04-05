@@ -13,7 +13,7 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 ## 📈 Progress Log
 - **Day 1**: Environment setup, Git integration, and VS Code automation.
 - **Day 2**: Mastering Input/Output streams, handling multiple values per line with `map()`, and capturing data into lists.
-
+**Day 3**: Deep dive into Python Collections: Operations on Lists, Tuples, Dictionaries, and Sets without errors! ✅
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)
