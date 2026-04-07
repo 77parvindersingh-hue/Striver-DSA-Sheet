@@ -1,14 +1,11 @@
-7
-5
-140734451004664
-140734451004728
-4.5 <class 'float'>
-4 <class 'int'>
-4.5 <class 'str'>
-<class 'list'>
-<class 'set'>
-(1, 2, 3, 4, 5, 6) <class 'tuple'>
-{'orange': 15, 'red': 45, 'brown': 21, 'blue': 54} <class 'dict'>
-False False False False False False
-True True True True True True
-[1, 2, 3, 4, 5, 6, 7, 74, 45, 25, 26]
+Sanjay Bisht
+Sanjay Bisht
+Sna ih
+Sanjay Bisht
+thsiB yajnaS
+tsByja
+Sanja
+[1, 2, 3, 4] 2640362532672
+[1, 2, 3, 4, 5] 2640362532672
+we lost
+C

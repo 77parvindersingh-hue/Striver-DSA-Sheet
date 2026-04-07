@@ -107,66 +107,114 @@
 # print(s)
 
 
-#DAY-4
+# #DAY-4
 
-# Mutable - Something that can be changed
-# eg - List, Dictionary, Set, etc.
-# Immutable - something that can't be changed
-# eg- int, float, bool, string, tuple, etc.
+# # Mutable - Something that can be changed
+# # eg - List, Dictionary, Set, etc.
+# # Immutable - something that can't be changed
+# # eg- int, float, bool, string, tuple, etc.
 
-x = 7
-print(x)
-
-
-x = 5
-print(x)
-# since I said int is immutable but I am getting a updated value when
-# I print it. So, the logic behind it is that its id are different 
-
-x = 5
-print(id(x))
-
-x = 7
-print(id(x))
+# x = 7
+# print(x)
 
 
-# Data Conversion 
+# x = 5
+# print(x)
+# # since I said int is immutable but I am getting a updated value when
+# # I print it. So, the logic behind it is that its id are different 
 
-a = 4.5
-print(a,type(a))
+# x = 5
+# print(id(x))
 
-b = int(a)
-print(b,type(b))
-
-c = str(a)
-print(c,type(c))
-
-l = [1,2,3,4,5,6]
-print(type(l))
-
-s = set(l)
-print(type(s))
-
-t = tuple(l)
-print(t,type(t))
-
-# converting into a dict
-
-colour = ['orange','red','brown','blue']
-qty = [15,45,21,54,46]
-
-d = dict(zip(colour,qty)) #we use zip function for dict.
-print(d,type(d))
-
-print(bool([]),bool({}),bool(()),bool(0),bool(0.0),bool(""))
-# it will give false
-
-print(bool([1,2]),bool({1,2}),bool((1,2)),bool(5),bool(0.2),bool("a"))
+# x = 7
+# print(id(x))
 
 
-# use of converting in real life
-# eg - u want to a list of unique elements from a mixed list 
-lst = [1,6,4,2,26,74,5,6,45,25,1,2,3,4,5,6,7,5,6,1]
+# # Data Conversion 
 
-s = list(set(lst))
-print(s) # a list of unique elements
+# a = 4.5
+# print(a,type(a))
+
+# b = int(a)
+# print(b,type(b))
+
+# c = str(a)
+# print(c,type(c))
+
+# l = [1,2,3,4,5,6]
+# print(type(l))
+
+# s = set(l)
+# print(type(s))
+
+# t = tuple(l)
+# print(t,type(t))
+
+# # converting into a dict
+
+# colour = ['orange','red','brown','blue']
+# qty = [15,45,21,54,46]
+
+# d = dict(zip(colour,qty)) #we use zip function for dict.
+# print(d,type(d))
+
+# print(bool([]),bool({}),bool(()),bool(0),bool(0.0),bool(""))
+# # it will give false
+
+# print(bool([1,2]),bool({1,2}),bool((1,2)),bool(5),bool(0.2),bool("a"))
+
+
+# # use of converting in real life
+# # eg - u want to a list of unique elements from a mixed list 
+# lst = [1,6,4,2,26,74,5,6,45,25,1,2,3,4,5,6,7,5,6,1]
+
+# s = list(set(lst))
+# print(s) # a list of unique elements
+
+
+# DAY-5
+
+# Slicing - helps us to extract data from a list or a string
+
+name = 'Sanjay Bisht'
+print(name[0:12])
+print(name[0:12:1])
+#syntax = print(name[str.index:end index : step])
+print(name[0::2])
+print(name[0:]) # by default it will take step=1 and end index will
+                # be 12
+print(name[-1::-1])
+print(name[-1:-12:-2])
+print(name[0:5]) #it always print -1 end index  value
+
+# same u can apply for a list
+
+# ques- prove list is mutable
+l = [1,2,3,4]
+print(l,id(l))
+l.append(5)
+print(l,id(l))
+# since the id of list is same therefore list is mutable
+
+# Condiional Statement 
+
+# If-Else 
+target = 125
+runs = 120
+if runs>target:
+    print('we won')
+else:
+    print('we lost')
+
+# If-Elif
+marks = int(input(''))
+if marks>=90:
+    print('A')
+elif marks>=75:
+    print('B')
+elif marks>=60:
+    print('C')
+elif marks>=33:
+    print('D')
+else:
+    print("FAIL")
