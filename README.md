@@ -13,14 +13,15 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 ## 📈 Progress Log
 - **Day 1**: Environment setup, Git integration, and VS Code automation.
 - **Day 2**: Mastering Input/Output streams, handling multiple values per line with `map()`, and capturing data into lists.
--**Day 3**: Deep dive into Python Collections: Operations on Lists, Tuples, Dictionaries, and Sets without errors! ✅
--**Day 4**: Understanding Mutability vs. Immutability and Data Type Conversion. ✅
+- **Day 3**: Deep dive into Python Collections: Operations on Lists, Tuples, Dictionaries, and Sets without errors! ✅
+- **DAY-4**: Understanding Mutability vs. Immutability and Data Type Conversion. ✅
+- **Day 5**: Mastered Python Slicing (`[start:stop:step]`) and implemented complex decision-making with `if-elif-else` conditional blocks. ✅
+
 ## 🧠 Key Concepts Mastered
 ### Mutability & Memory
 I explored how Python handles data in memory using the `id()` function:
 - **Immutable Types**: Integers, Floats, Strings, and Tuples. (Changing them creates a new object in a new memory location).
 - **Mutable Types**: Lists, Dictionaries, and Sets. (Can be modified in place).
-- **Day 5**: Mastered Python Slicing (`[start:stop:step]`) and implemented complex decision-making with `if-elif-else` conditional blocks. ✅
 
 ### Advanced Data Handling
 - **Type Casting**: Converting between collections (e.g., `list(set(obj))` to get unique elements).
