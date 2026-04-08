@@ -16,6 +16,14 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - **Day 3**: Deep dive into Python Collections: Operations on Lists, Tuples, Dictionaries, and Sets without errors! ✅
 - **DAY-4**: Understanding Mutability vs. Immutability and Data Type Conversion. ✅
 - **Day 5**: Mastered Python Slicing (`[start:stop:step]`) and implemented complex decision-making with `if-elif-else` conditional blocks. ✅
+- **Day 6**: Mastered Iteration using `for` and `while` loops. Implemented Linear Search with early-exit optimization and documented syntax-level debugging. ✅
+## 🛠️ Lessons from the Trenches: Debugging
+### The "Subscriptable" Range Error
+**Problem**: Encountered `TypeError: 'range' object is not subscriptable`.
+**Cause**: Using square brackets `[]` instead of parentheses `()` when calling the `range` function. 
+- `[]` is used for **indexing/subscripting** (accessing an existing element).
+- `()` is used for **invoking a function**.
+**Fix**: Changed `range[start, stop]` to `range(start, stop)`.
 
 ## 🧠 Key Concepts Mastered
 ### Mutability & Memory
@@ -30,3 +38,9 @@ I explored how Python handles data in memory using the `id()` function:
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)
+## 🔍 Technical Deep Dive: Linear Search
+Today, I implemented a Linear Search algorithm to find a target element $k$ in a list.
+
+- **Time Complexity**: $O(n)$ — In the worst case, we check every element once.
+- **Optimization**: Used a `break` statement to stop the loop the moment the target is found, improving the average-case runtime.
+- **Logic Pattern**: Initialized a result variable to `-1` to handle the "Not Found" edge case gracefully.
