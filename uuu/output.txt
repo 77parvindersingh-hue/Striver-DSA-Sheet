@@ -1,41 +1,4 @@
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-Do one pushup
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-raj
-2
-4
-5
-6
+24
 1
 2
 3
@@ -45,21 +8,5 @@ raj
 7
 8
 9
-10
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-0 1
-1 2
-2 3
-3 45
-4 6
-5 7
-6
+45
+[2, 3, 4, 5, 6, 7]

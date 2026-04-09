@@ -24,6 +24,17 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - `[]` is used for **indexing/subscripting** (accessing an existing element).
 - `()` is used for **invoking a function**.
 **Fix**: Changed `range[start, stop]` to `range(start, stop)`.
+- **Day 7**: Modularized code using Functions and began analyzing algorithms using Time and Space Complexity (Big O Notation). ✅
+
+## ⏱️ Algorithmic Complexity
+### Time Complexity ($O(n)$)
+- Learned that complexity measures the growth of operations relative to input size.
+- Identified $O(n)$ linear time in loop-based operations (like my `sum` and `update` functions).
+
+### Space Complexity
+- **Input Space**: Space for the initial data.
+- **Auxiliary Space**: Extra space used (e.g., temporary lists).
+- Aiming for **In-place algorithms** with $O(1)$ auxiliary space whenever possible!
 
 ## 🧠 Key Concepts Mastered
 ### Mutability & Memory

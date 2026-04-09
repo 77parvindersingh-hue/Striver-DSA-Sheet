@@ -232,44 +232,111 @@
 
 # While Loop
 
-pushup = 1
-while pushup<=15:
-    print('Do one pushup')
-    pushup = pushup+1
+# pushup = 1
+# while pushup<=15:
+#     print('Do one pushup')
+#     pushup = pushup+1
 
-# For Loop
+# # For Loop
 
-# Print name Raj 20 times
-for Raj in range(1,20):
-    print('raj')
+# # Print name Raj 20 times
+# for Raj in range(1,20):
+#     print('raj')
 
-for num in [2,4,5,6]:
-    print(num)
+# for num in [2,4,5,6]:
+#     print(num)
 
-# print numbers from 1 to 10
-for num in range(1,11):
-    print(num)
+# # print numbers from 1 to 10
+# for num in range(1,11):
+#     print(num)
 
-    #    OR
+#     #    OR
 
-for num in [1,2,3,4,5,6,7,8,9,10]:
-    print(num)
+# for num in [1,2,3,4,5,6,7,8,9,10]:
+#     print(num)
 
-# Loop to print list and index both together'
-l = [1,2,3,45,6,7]
-n = len(l)
-for i in range(n):
-    print(i,l[i])
+# # Loop to print list and index both together'
+# l = [1,2,3,45,6,7]
+# n = len(l)
+# for i in range(n):
+#     print(i,l[i])
 
-# question find the index of 17 in the list
-l = [1,2,3,4,56,7,17,56,76,78,64]
-k = 17
+# # question find the index of 17 in the list
+# l = [1,2,3,4,56,7,17,56,76,78,64]
+# k = 17
 
-n = len(l)
+# n = len(l)
 
-ans = -1
-for i in range(n):
-    if l[i] == k:
-        ans = i
-        break
-print(ans)       
+# ans = -1
+# for i in range(n):
+#     if l[i] == k:
+#         ans = i
+#         break
+# print(ans)       
+
+
+# DAY-7
+
+# Functions in Python
+
+# print sum of 3 numbers
+
+def sum(a,b,c):
+    print(a+b+c)
+
+sum(5,12,7)
+
+# use function and print a list and add it
+
+def sum(lst):
+    for num in lst:
+        print(num)
+    sm = 0
+    for num in lst:
+        sm = sm + num
+    print(sm)
+   
+lst = [1,2,3,4,5,6,7,8,9]
+sum(lst)
+ 
+
+# Create a list and add 1 in every element
+
+def update(lst):
+    n = len(lst)
+    for i in range(n):
+        lst[i] = lst[i]+1
+
+lst = [1,2,3,4,5,6]
+update(lst)
+print(lst)
+
+# Time Complexity
+# Time complexity is a way of describing how the runtime of an algorithm
+# grows as the size of the input (usually denoted as n) increases. 
+# It isn’t about measuring seconds or minutes—since those depend on
+# your hardware—but rather about counting the number of operations
+# performed.
+
+# Think of it as the "efficiency grade" of your code.
+# Types of Time Complexity
+# 1. Best Time
+# 2. Worst Time
+# 3. Average Time
+
+# space complexity measures how much memory (RAM) your algorithm 
+# needs to run as the input size ($n$) grows.
+# Space complexity is actually the sum of two parts:
+
+# Auxiliary Space: Extra or temporary space used by the algorithm
+# (e.g., creating a new temporary list).
+
+# Input Space: The space occupied by the input itself.
+# Why Space Complexity Matters
+# In modern computers, RAM is plentiful, but it isn't infinite. Understanding space
+# complexity is critical when:
+# 1. Working with Big Data: Processing a 10GB datasetwith an $O(n)$ algorithm might crash a machine with
+# 8GB of RAM.
+# 2. Embedded Systems: Coding for hardware with very limited memory (like a smartwatch or a sensor).
+# 3. In-place Algorithms: Some algorithms, like Heapsort, are famous because they sort data using $O(1)$
+# extra space, making them very memory-efficient
