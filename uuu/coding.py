@@ -277,39 +277,39 @@
 
 # DAY-7
 
-# Functions in Python
+# # Functions in Python
 
-# print sum of 3 numbers
+# # print sum of 3 numbers
 
-def sum(a,b,c):
-    print(a+b+c)
+# def sum(a,b,c):
+#     print(a+b+c)
 
-sum(5,12,7)
+# sum(5,12,7)
 
-# use function and print a list and add it
+# # use function and print a list and add it
 
-def sum(lst):
-    for num in lst:
-        print(num)
-    sm = 0
-    for num in lst:
-        sm = sm + num
-    print(sm)
+# def sum(lst):
+#     for num in lst:
+#         print(num)
+#     sm = 0
+#     for num in lst:
+#         sm = sm + num
+#     print(sm)
    
-lst = [1,2,3,4,5,6,7,8,9]
-sum(lst)
+# lst = [1,2,3,4,5,6,7,8,9]
+# sum(lst)
  
 
-# Create a list and add 1 in every element
+# # Create a list and add 1 in every element
 
-def update(lst):
-    n = len(lst)
-    for i in range(n):
-        lst[i] = lst[i]+1
+# def update(lst):
+#     n = len(lst)
+#     for i in range(n):
+#         lst[i] = lst[i]+1
 
-lst = [1,2,3,4,5,6]
-update(lst)
-print(lst)
+# lst = [1,2,3,4,5,6]
+# update(lst)
+# print(lst)
 
 # Time Complexity
 # Time complexity is a way of describing how the runtime of an algorithm
@@ -340,3 +340,161 @@ print(lst)
 # 2. Embedded Systems: Coding for hardware with very limited memory (like a smartwatch or a sensor).
 # 3. In-place Algorithms: Some algorithms, like Heapsort, are famous because they sort data using $O(1)$
 # extra space, making them very memory-efficient
+
+
+# DAY - 8
+
+# Pattern Problemss
+
+# write a code to print
+# *****
+# *****
+# *****
+# *****
+# *****
+
+n = 5
+
+for i in range(n):
+    print("*****")
+
+#     OR
+print('or another ')
+
+
+n = 5
+for i in range(n):
+    for j in range(n):
+        print('*',end='')
+    print()
+# time complexit for it will be O(n**2) as one for i loop n times and one j loop n time 
+
+# write a code to print
+# *
+# **
+# ***
+# ****
+# *****
+
+n = 5
+
+for i in range(n):
+    for j in range(i+1):
+        print('*',end='')
+    print()
+
+
+# WAP to print
+# 1
+# 12
+# 123
+# 1234
+# 12345
+
+n = 5
+
+for i in range(n):
+    for j in range(i+1):
+        print(j+1,end='')
+    print()
+
+
+# WAP to print
+# 1
+# 22
+# 333
+# 4444
+# 55555
+
+
+n = 5
+for i in range(n):
+    for j in range(i+1):
+        print(i+1,end='')
+    print()
+
+
+# WAP to print
+# *****
+# ****
+# ***
+# **
+# *
+
+n = 5 
+for i in range(n):
+    for j in range(n-i):
+        print('*',end='')
+    print()
+
+
+# WAP to print
+# 12345
+# 1234
+# 123
+# 12
+# 1
+
+n = 5
+
+for i in range(n):
+    for j in range(n-i):
+        print(j+1,end='')
+    print()
+
+
+# WAP to print
+# 1
+# 2 3
+# 4 5 6
+# 7 8 9 10 
+# 11 12 13 14 15
+
+n = 5
+k = 1
+
+for i in range(n):
+    for j in range(i+1):
+        print(k,end=' ')
+        k += 1
+    print()
+
+
+# WAP to print
+# A 
+# AB 
+# ABC 
+# ABCD
+# ABCDE
+
+def numtochar(num):
+    return chr(num+65)
+
+n = 5
+
+for i in range(n):
+    for j in range(i+1):
+        print(numtochar(j),end='')
+    print()
+
+
+# WAP to print
+# A 
+# BB 
+# CCC
+# DDDD
+# EEEEE
+
+
+
+def numtochar(num):
+    return chr(num+65)
+
+n = 5
+
+for i in range(n):
+    for j in range(i+1):
+        print(numtochar(i),end='')
+    print()
+
+

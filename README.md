@@ -17,6 +17,9 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - **DAY-4**: Understanding Mutability vs. Immutability and Data Type Conversion. ✅
 - **Day 5**: Mastered Python Slicing (`[start:stop:step]`) and implemented complex decision-making with `if-elif-else` conditional blocks. ✅
 - **Day 6**: Mastered Iteration using `for` and `while` loops. Implemented Linear Search with early-exit optimization and documented syntax-level debugging. ✅
+- **Day 7**: Modularized code using Functions and began analyzing algorithms using Time and Space Complexity (Big O Notation). ✅
+- **Day 8**: Mastered Nested Loops and Pattern Problems. Implemented over 10 different patterns including triangles, inverted pyramids, and character-mapped ASCII art. ✅
+
 ## 🛠️ Lessons from the Trenches: Debugging
 ### The "Subscriptable" Range Error
 **Problem**: Encountered `TypeError: 'range' object is not subscriptable`.
@@ -24,7 +27,15 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - `[]` is used for **indexing/subscripting** (accessing an existing element).
 - `()` is used for **invoking a function**.
 **Fix**: Changed `range[start, stop]` to `range(start, stop)`.
-- **Day 7**: Modularized code using Functions and began analyzing algorithms using Time and Space Complexity (Big O Notation). ✅
+## 📐 Pattern Logic & Nested Loops
+### Key Concepts:
+- **Outer Loop**: Controls the number of rows.
+- **Inner Loop**: Controls the columns/content of each row.
+- **Character Mapping**: Used `chr(65 + i)` to generate alphabetical patterns.
+- **Complexity**: $O(n^2)$ time complexity for nested iteration.
+
+### 💡 Pro-Tip:
+When building symmetric patterns, always analyze the relationship between the row index ($i$) and the number of spaces or stars required before writing the code.
 
 ## ⏱️ Algorithmic Complexity
 ### Time Complexity ($O(n)$)
