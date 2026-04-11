@@ -342,159 +342,303 @@
 # extra space, making them very memory-efficient
 
 
-# DAY - 8
+# # DAY - 8
 
-# Pattern Problemss
+# # Pattern Problemss
 
-# write a code to print
-# *****
-# *****
-# *****
-# *****
-# *****
+# # write a code to print
+# # *****
+# # *****
+# # *****
+# # *****
+# # *****
 
-n = 5
+# n = 5
 
-for i in range(n):
-    print("*****")
+# for i in range(n):
+#     print("*****")
 
-#     OR
-print('or another ')
-
-
-n = 5
-for i in range(n):
-    for j in range(n):
-        print('*',end='')
-    print()
-# time complexit for it will be O(n**2) as one for i loop n times and one j loop n time 
-
-# write a code to print
-# *
-# **
-# ***
-# ****
-# *****
-
-n = 5
-
-for i in range(n):
-    for j in range(i+1):
-        print('*',end='')
-    print()
+# #     OR
+# print('or another ')
 
 
-# WAP to print
-# 1
-# 12
-# 123
-# 1234
-# 12345
+# n = 5
+# for i in range(n):
+#     for j in range(n):
+#         print('*',end='')
+#     print()
+# # time complexit for it will be O(n**2) as one for i loop n times and one j loop n time 
 
-n = 5
+# # write a code to print
+# # *
+# # **
+# # ***
+# # ****
+# # *****
 
-for i in range(n):
-    for j in range(i+1):
-        print(j+1,end='')
-    print()
+# n = 5
 
-
-# WAP to print
-# 1
-# 22
-# 333
-# 4444
-# 55555
-
-
-n = 5
-for i in range(n):
-    for j in range(i+1):
-        print(i+1,end='')
-    print()
+# for i in range(n):
+#     for j in range(i+1):
+#         print('*',end='')
+#     print()
 
 
-# WAP to print
-# *****
-# ****
-# ***
-# **
-# *
+# # WAP to print
+# # 1
+# # 12
+# # 123
+# # 1234
+# # 12345
 
-n = 5 
-for i in range(n):
-    for j in range(n-i):
-        print('*',end='')
-    print()
+# n = 5
 
-
-# WAP to print
-# 12345
-# 1234
-# 123
-# 12
-# 1
-
-n = 5
-
-for i in range(n):
-    for j in range(n-i):
-        print(j+1,end='')
-    print()
+# for i in range(n):
+#     for j in range(i+1):
+#         print(j+1,end='')
+#     print()
 
 
-# WAP to print
-# 1
-# 2 3
-# 4 5 6
-# 7 8 9 10 
-# 11 12 13 14 15
-
-n = 5
-k = 1
-
-for i in range(n):
-    for j in range(i+1):
-        print(k,end=' ')
-        k += 1
-    print()
+# # WAP to print
+# # 1
+# # 22
+# # 333
+# # 4444
+# # 55555
 
 
-# WAP to print
-# A 
-# AB 
-# ABC 
-# ABCD
-# ABCDE
-
-def numtochar(num):
-    return chr(num+65)
-
-n = 5
-
-for i in range(n):
-    for j in range(i+1):
-        print(numtochar(j),end='')
-    print()
+# n = 5
+# for i in range(n):
+#     for j in range(i+1):
+#         print(i+1,end='')
+#     print()
 
 
-# WAP to print
-# A 
-# BB 
-# CCC
-# DDDD
-# EEEEE
+# # WAP to print
+# # *****
+# # ****
+# # ***
+# # **
+# # *
+
+# n = 5 
+# for i in range(n):
+#     for j in range(n-i):
+#         print('*',end='')
+#     print()
+
+
+# # WAP to print
+# # 12345
+# # 1234
+# # 123
+# # 12
+# # 1
+
+# n = 5
+
+# for i in range(n):
+#     for j in range(n-i):
+#         print(j+1,end='')
+#     print()
+
+
+# # WAP to print
+# # 1
+# # 2 3
+# # 4 5 6
+# # 7 8 9 10 
+# # 11 12 13 14 15
+
+# n = 5
+# k = 1
+
+# for i in range(n):
+#     for j in range(i+1):
+#         print(k,end=' ')
+#         k += 1
+#     print()
+
+
+# # WAP to print
+# # A 
+# # AB 
+# # ABC 
+# # ABCD
+# # ABCDE
+
+# def numtochar(num):
+#     return chr(num+65)
+
+# n = 5
+
+# for i in range(n):
+#     for j in range(i+1):
+#         print(numtochar(j),end='')
+#     print()
+
+
+# # WAP to print
+# # A 
+# # BB 
+# # CCC
+# # DDDD
+# # EEEEE
 
 
 
-def numtochar(num):
-    return chr(num+65)
+# def numtochar(num):
+#     return chr(num+65)
 
-n = 5
+# n = 5
 
-for i in range(n):
-    for j in range(i+1):
-        print(numtochar(i),end='')
-    print()
+# for i in range(n):
+#     for j in range(i+1):
+#         print(numtochar(i),end='')
+#     print()
 
+
+
+
+# DAY - 9
+
+
+# Basic Maths Problems
+
+# Count the total integers in a number
+
+num = 123
+ans = len(str(num))
+print(ans)
+
+
+# OR
+
+def countnum(num):
+     return len(str(num))
+
+num = int(input())
+ans = countnum(num)
+print(ans)
+
+# OR
+
+print('using loop')
+
+num = int(input())
+cnt = 0
+while num>0:
+     num = num//10
+     cnt +=1
+     print(cnt)
+
+
+# Reverse a number 
+
+
+print('reverse number is :')
+
+
+def reversenum(num):
+    ans = 0
+    while num>0:
+         rem = num%10
+         ans = ans*10+rem
+         num = num//10
+    return ans
+num = int(input())
+ans = reversenum(num)
+print(ans)
+
+
+# Pallindrome
+
+print('Pallindrome true or false:')
+
+
+def reversenum(num):
+    ans = 0
+    while num>0:
+         rem = num%10
+         ans = ans*10+rem
+         num = num//10
+    return ans
+
+def pallindrome(num):
+     return num == reversenum(num)
+
+
+num = int(input())
+ans = pallindrome(num)
+print(ans)
+
+
+# Finding GCF
+
+print('gcf is ')
+
+def gcd(a,b):
+     divisor = min(a,b)
+     dividend = max(a,b)
+     while dividend%divisor!=0:
+          temp = dividend
+          dividend = divisor
+          divisor = temp%divisor
+     return divisor
+
+ans = gcd(10,12)
+print(ans)
+
+ans = gcd(17,11)
+print(ans)
+
+
+# Check whether a number is Armstrong
+
+
+
+def armstrong(num):
+     ans = 0
+     k = countnum(num) # this is used from count function made above
+     temp = num
+
+     while num>0:
+          rem = num%10
+          ans = ans + rem**k
+          num = num//10
+     return temp == ans
+
+ans = armstrong(153)
+print(ans) 
+
+ans = armstrong(13)
+print(ans) 
+
+
+# print all the divisors
+
+print('divisor is: ')
+
+def numdivisor(num):
+     for i in range(1,num+1):
+          if num%i==0:
+               print(i)
+
+numdivisor(12)
+
+# Check it is prime or not 
+
+print('it is prime or not')
+
+def isprime(num):
+     for i in range(2,num):
+          if num%i==0:
+               return False
+     return True
+
+ans = isprime(225)
+print(ans)
+
+ans = isprime(17)
+print(ans)
 
