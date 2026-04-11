@@ -19,7 +19,20 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - **Day 6**: Mastered Iteration using `for` and `while` loops. Implemented Linear Search with early-exit optimization and documented syntax-level debugging. ✅
 - **Day 7**: Modularized code using Functions and began analyzing algorithms using Time and Space Complexity (Big O Notation). ✅
 - **Day 8**: Mastered Nested Loops and Pattern Problems. Implemented over 10 different patterns including triangles, inverted pyramids, and character-mapped ASCII art. ✅
+- **Day 9**: Completed 7 core Math problems (Count Digits, Reverse Number, Palindrome, GCD, Armstrong Numbers, and Divisors). ✅
 
+## 🔢 Mathematical Implementation
+### Digit Extraction
+- Used `remainder = num % 10` to isolate the last digit.
+- Used `num = num // 10` to reduce the number in each iteration.
+- Time Complexity for these operations is generally $O(\log_{10}N)$ because we divide the number by 10 in each step.
+
+### GCD (Greatest Common Divisor)
+- Implemented the **Euclidean Algorithm** ($GCD(a, b) = GCD(b, a \% b)$). 
+- This is significantly more efficient than checking every number from 1 to $N$.
+
+### Armstrong Numbers
+- Logic: Reached the total count of digits first, then iterated through each digit to calculate the power sum.
 ## 🛠️ Lessons from the Trenches: Debugging
 ### The "Subscriptable" Range Error
 **Problem**: Encountered `TypeError: 'range' object is not subscriptable`.
