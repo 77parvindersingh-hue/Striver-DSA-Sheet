@@ -500,145 +500,206 @@
 
 
 
-# DAY - 9
+# # DAY - 9
 
 
-# Basic Maths Problems
+# # Basic Maths Problems
 
-# Count the total integers in a number
+# # Count the total integers in a number
 
-num = 123
-ans = len(str(num))
-print(ans)
+# num = 123
+# ans = len(str(num))
+# print(ans)
 
 
-# OR
+# # OR
 
-def countnum(num):
-     return len(str(num))
+# def countnum(num):
+#      return len(str(num))
+
+# num = int(input())
+# ans = countnum(num)
+# print(ans)
+
+# # OR
+
+# print('using loop')
+
+# num = int(input())
+# cnt = 0
+# while num>0:
+#      num = num//10
+#      cnt +=1
+#      print(cnt)
+
+
+# # Reverse a number 
+
+
+# print('reverse number is :')
+
+
+# def reversenum(num):
+#     ans = 0
+#     while num>0:
+#          rem = num%10
+#          ans = ans*10+rem
+#          num = num//10
+#     return ans
+# num = int(input())
+# ans = reversenum(num)
+# print(ans)
+
+
+# # Pallindrome
+
+# print('Pallindrome true or false:')
+
+
+# def reversenum(num):
+#     ans = 0
+#     while num>0:
+#          rem = num%10
+#          ans = ans*10+rem
+#          num = num//10
+#     return ans
+
+# def pallindrome(num):
+#      return num == reversenum(num)
+
+
+# num = int(input())
+# ans = pallindrome(num)
+# print(ans)
+
+
+# # Finding GCF
+
+# print('gcf is ')
+
+# def gcd(a,b):
+#      divisor = min(a,b)
+#      dividend = max(a,b)
+#      while dividend%divisor!=0:
+#           temp = dividend
+#           dividend = divisor
+#           divisor = temp%divisor
+#      return divisor
+
+# ans = gcd(10,12)
+# print(ans)
+
+# ans = gcd(17,11)
+# print(ans)
+
+
+# # Check whether a number is Armstrong
+
+
+
+# def armstrong(num):
+#      ans = 0
+#      k = countnum(num) # this is used from count function made above
+#      temp = num
+
+#      while num>0:
+#           rem = num%10
+#           ans = ans + rem**k
+#           num = num//10
+#      return temp == ans
+
+# ans = armstrong(153)
+# print(ans) 
+
+# ans = armstrong(13)
+# print(ans) 
+
+
+# # print all the divisors
+
+# print('divisor is: ')
+
+# def numdivisor(num):
+#      for i in range(1,num+1):
+#           if num%i==0:
+#                print(i)
+
+# numdivisor(12)
+
+# # Check it is prime or not 
+
+# print('it is prime or not')
+
+# def isprime(num):
+#      for i in range(2,num):
+#           if num%i==0:
+#                return False
+#      return True
+
+# ans = isprime(225)
+# print(ans)
+
+# ans = isprime(17)
+# print(ans)
+
+
+# DAY - 10
+
+# ques- given a number. print its prime or not 
 
 num = int(input())
-ans = countnum(num)
-print(ans)
-
-# OR
-
-print('using loop')
-
-num = int(input())
-cnt = 0
-while num>0:
-     num = num//10
-     cnt +=1
-     print(cnt)
-
-
-# Reverse a number 
-
-
-print('reverse number is :')
-
-
-def reversenum(num):
-    ans = 0
-    while num>0:
-         rem = num%10
-         ans = ans*10+rem
-         num = num//10
-    return ans
-num = int(input())
-ans = reversenum(num)
-print(ans)
-
-
-# Pallindrome
-
-print('Pallindrome true or false:')
-
-
-def reversenum(num):
-    ans = 0
-    while num>0:
-         rem = num%10
-         ans = ans*10+rem
-         num = num//10
-    return ans
-
-def pallindrome(num):
-     return num == reversenum(num)
-
-
-num = int(input())
-ans = pallindrome(num)
-print(ans)
-
-
-# Finding GCF
-
-print('gcf is ')
-
-def gcd(a,b):
-     divisor = min(a,b)
-     dividend = max(a,b)
-     while dividend%divisor!=0:
-          temp = dividend
-          dividend = divisor
-          divisor = temp%divisor
-     return divisor
-
-ans = gcd(10,12)
-print(ans)
-
-ans = gcd(17,11)
-print(ans)
-
-
-# Check whether a number is Armstrong
-
-
-
-def armstrong(num):
-     ans = 0
-     k = countnum(num) # this is used from count function made above
-     temp = num
-
-     while num>0:
-          rem = num%10
-          ans = ans + rem**k
-          num = num//10
-     return temp == ans
-
-ans = armstrong(153)
-print(ans) 
-
-ans = armstrong(13)
-print(ans) 
-
-
-# print all the divisors
-
-print('divisor is: ')
-
-def numdivisor(num):
-     for i in range(1,num+1):
-          if num%i==0:
-               print(i)
-
-numdivisor(12)
-
-# Check it is prime or not 
-
-print('it is prime or not')
 
 def isprime(num):
-     for i in range(2,num):
-          if num%i==0:
-               return False
-     return True
+    for i in range(2,num):
+        if num%2==0:
+            return False
+    return True
 
-ans = isprime(225)
+ans = isprime(num)
 print(ans)
 
-ans = isprime(17)
-print(ans)
 
+
+# given a series print its prime or not 
+
+series = list(map(int,input().split()))
+
+def isprime(num):
+    for i in range(2,num):
+        if num%2==0:
+            return False
+    return True
+
+for item in series:
+    ans = isprime(item)
+    print(item,ans)
+# ans = isprime(num)
+# print(ans)
+
+
+# The Sieve of Eratosthenes is one of the most efficient ways to find all prime numbers up to a specific 
+# limit, $n$. Instead of checking every single number to see if it’s prime (which takes a long time), 
+# this algorithm works by eliminating multiples.
+
+
+numbers = list(map(int, input().split()))
+def sieve(n):
+    # Create a boolean array "is_prime[0..n]" and initialize
+    # all entries it as true. 
+    is_prime = [True] * (n + 1)
+    is_prime[0] = is_prime[1] = False # 0 and 1 are not prime
+    
+    p = 2
+    while (p * p <= n):
+        # If is_prime[p] is not changed, then it is a prime
+        if is_prime[p] == True:
+            # Update all multiples of p
+            for i in range(p * p, n + 1, p):
+                is_prime[i] = False
+        p += 1     
+    
+    # Return list of primes
+    return [i for i in range(n + 1) if is_prime[i]]
+
+for n in numbers:
+    print(f"Primes up to {n}: {sieve(n)}")

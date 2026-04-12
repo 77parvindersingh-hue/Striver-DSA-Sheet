@@ -20,7 +20,15 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - **Day 7**: Modularized code using Functions and began analyzing algorithms using Time and Space Complexity (Big O Notation). ✅
 - **Day 8**: Mastered Nested Loops and Pattern Problems. Implemented over 10 different patterns including triangles, inverted pyramids, and character-mapped ASCII art. ✅
 - **Day 9**: Completed 7 core Math problems (Count Digits, Reverse Number, Palindrome, GCD, Armstrong Numbers, and Divisors). ✅
+- **Day 10**: Advanced Number Theory - Sieve of Eratosthenes. ✅
 
+## 🚀 Key Technical 
+- LearningsAlgorithmic Shift: Learned that while the $O(\sqrt{N})$ primality test is perfect for a single number, it becomes a bottleneck when checking a large range.
+- The Sieve Logic: Implemented the Sieve of Eratosthenes to systematically "strike out" multiples of each prime, ensuring each composite number is marked only when necessary.
+- Complexity Optimization: * Time: Successfully implemented a solution with $O(N \log (\log N))$ complexity.
+- Space: Utilized a boolean array (Sieve) for efficient state tracking.
+- Inner Loop Optimization: Applied the optimization of starting the multiple-marking process from $p^2$, as all smaller multiples would have been marked by previous primes.- 
+- Python Input Handling: Mastered handling multi-line and space-separated inputs from input.txt to run batch tests on the sieve.
 ## 🔢 Mathematical Implementation
 ### Digit Extraction
 - Used `remainder = num % 10` to isolate the last digit.
