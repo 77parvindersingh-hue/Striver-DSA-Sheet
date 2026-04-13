@@ -643,63 +643,143 @@
 # print(ans)
 
 
-# DAY - 10
+# # DAY - 10
 
-# ques- given a number. print its prime or not 
+# # ques- given a number. print its prime or not 
 
-num = int(input())
+# num = int(input())
 
-def isprime(num):
-    for i in range(2,num):
-        if num%2==0:
-            return False
-    return True
+# def isprime(num):
+#     for i in range(2,num):
+#         if num%2==0:
+#             return False
+#     return True
 
-ans = isprime(num)
-print(ans)
-
-
-
-# given a series print its prime or not 
-
-series = list(map(int,input().split()))
-
-def isprime(num):
-    for i in range(2,num):
-        if num%2==0:
-            return False
-    return True
-
-for item in series:
-    ans = isprime(item)
-    print(item,ans)
 # ans = isprime(num)
 # print(ans)
 
 
-# The Sieve of Eratosthenes is one of the most efficient ways to find all prime numbers up to a specific 
-# limit, $n$. Instead of checking every single number to see if it’s prime (which takes a long time), 
-# this algorithm works by eliminating multiples.
+
+# # given a series print its prime or not 
+
+# series = list(map(int,input().split()))
+
+# def isprime(num):
+#     for i in range(2,num):
+#         if num%2==0:
+#             return False
+#     return True
+
+# for item in series:
+#     ans = isprime(item)
+#     print(item,ans)
+# # ans = isprime(num)
+# # print(ans)
 
 
-numbers = list(map(int, input().split()))
-def sieve(n):
-    # Create a boolean array "is_prime[0..n]" and initialize
-    # all entries it as true. 
-    is_prime = [True] * (n + 1)
-    is_prime[0] = is_prime[1] = False # 0 and 1 are not prime
+# # The Sieve of Eratosthenes is one of the most efficient ways to find all prime numbers up to a specific 
+# # limit, $n$. Instead of checking every single number to see if it’s prime (which takes a long time), 
+# # this algorithm works by eliminating multiples.
+
+
+# numbers = list(map(int, input().split()))
+# def sieve(n):
+#     # Create a boolean array "is_prime[0..n]" and initialize
+#     # all entries it as true. 
+#     is_prime = [True] * (n + 1)
+#     is_prime[0] = is_prime[1] = False # 0 and 1 are not prime
     
-    p = 2
-    while (p * p <= n):
-        # If is_prime[p] is not changed, then it is a prime
-        if is_prime[p] == True:
-            # Update all multiples of p
-            for i in range(p * p, n + 1, p):
-                is_prime[i] = False
-        p += 1     
+#     p = 2
+#     while (p * p <= n):
+#         # If is_prime[p] is not changed, then it is a prime
+#         if is_prime[p] == True:
+#             # Update all multiples of p
+#             for i in range(p * p, n + 1, p):
+#                 is_prime[i] = False
+#         p += 1     
     
-    # Return list of primes
-    return [i for i in range(n + 1) if is_prime[i]]
+#     # Return list of primes
+#     return [i for i in range(n + 1) if is_prime[i]]
 
-for n in numbers:
-    print(f"Primes up to {n}: {sieve(n)}")
+# for n in numbers:
+#     print(f"Primes up to {n}: {sieve(n)}")
+
+
+
+# DAY - 11
+
+
+# Recursion: It is a process of calling a function again and again until a specific condtion is met
+
+
+# Questions - 
+
+# 1. Print a Name n times
+
+def printN(n):
+    if n==0:
+        return
+    print('raj')
+    printN(n-1)
+
+printN(5)
+
+
+# 2. Print 1 to n using recursion
+
+def print1toN(i,n):
+    if i>n:
+        return
+    print(i)
+    print1toN(i+1,n)
+
+print1toN(1,7)
+
+# 3. Print n to 1 using recursion
+
+print('n to 1 using recursion')
+
+
+def printnto1(i,n):
+    if i<n:
+        return
+    print(i)
+    printnto1(i-1,n)
+
+printnto1(7,1)
+
+
+# 4. Sum of n numbers
+
+print('sum of n numbers')
+
+n =5
+sm = 0
+for i in range(1,n+1):
+    sm = sm+i
+    print(sm)
+
+# Recursion approcach
+
+print('recursion approach')
+
+def sum(i,n,sm):
+    if i>n:
+        return sm
+    return sum(i+1,n,sm+i)
+
+ans = sum(1,7,0)
+print(ans)
+
+#  5. Factorial of a number
+
+print('factorial of a number')
+
+def fact(i,n,ans):
+    if i>n:
+        return ans
+    return fact(i+1,n,ans*i)
+
+a = fact(1,5,1)
+print(a)
+

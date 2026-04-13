@@ -21,7 +21,20 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - **Day 8**: Mastered Nested Loops and Pattern Problems. Implemented over 10 different patterns including triangles, inverted pyramids, and character-mapped ASCII art. ✅
 - **Day 9**: Completed 7 core Math problems (Count Digits, Reverse Number, Palindrome, GCD, Armstrong Numbers, and Divisors). ✅
 - **Day 10**: Advanced Number Theory - Sieve of Eratosthenes. ✅
-
+- **Day 11**: Recursion Basics & Functional Logic. ✅
+- The Core Concept: Moved from iterative loops to the recursive "self-calling" model. Learned that recursion is simply a function solving a small part of a problem and delegating the rest to another instance of itself.
+- The Call Stack: Understood how memory manages recursive calls. Each call stays in the stack until it hits the Base Case, then they all resolve (pop) in reverse order.
+- Complexity Analysis: Learned that while recursion looks "cleaner," it carries an $O(N)$ space complexity due to the stack, unlike a simple loop which is $O(1)$ space.
+## 🔢 Mathematical Implementation
+- Recursive Patterns
+- Printing $1$ to $N$ vs. $N$ to $1$: Explored the difference between printing before the recursive call (top-down) and printing after the call (backtracking).
+- Parameterized Recursion: Implemented the "Sum of $N$ Numbers" by passing the running total as a parameter through the function calls.
+- Functional Recursion: Solved the Factorial problem by returning values up the stack: $f(n) = n \times f(n-1)$.
+## 🛠️ Lessons from the Trenches: Debugging
+- Avoiding the Stack OverflowProblem: 
+- Encountered RecursionError while testing larger ranges.
+- Cause: Missing or unreachable Base Case. If the condition if n == 0 is never met, the function calls itself until the computer runs out of memory.
+- Solution: Always ensure the input variable is moving toward the base case (e.g., $n-1$) and that the base case is defined before the recursive call.
 ## 🚀 Key Technical 
 - LearningsAlgorithmic Shift: Learned that while the $O(\sqrt{N})$ primality test is perfect for a single number, it becomes a bottleneck when checking a large range.
 - The Sieve Logic: Implemented the Sieve of Eratosthenes to systematically "strike out" multiples of each prime, ensuring each composite number is marked only when necessary.
