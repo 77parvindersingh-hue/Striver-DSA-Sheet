@@ -784,71 +784,142 @@
 # print(a)
 
 
-# DAY - 12
+# # DAY - 12
 
 
-# 1. Check whether a string is a palidrome or not by recursion 
+# # 1. Check whether a string is a palidrome or not by recursion 
 
-string = input()
+# string = input()
 
-def ispal(s,e,string):
-    if s>e:
-        return True
-    if string[s]!=string[e]:
-        return False
-    return ispal(s+1,e-1,string)
+# def ispal(s,e,string):
+#     if s>e:
+#         return True
+#     if string[s]!=string[e]:
+#         return False
+#     return ispal(s+1,e-1,string)
 
-ans = ispal(0,len(string)-1,string)
-print(ans)
-
-
-# Fibonacci series
-print('Fibonacci seriers')
-n = int(input("Enter the number of terms: "))
-
-def print_fibonacci_series(n):
-    a, b = 0, 1
-    for i in range(n + 1): # +1 to include the nth term
-        print(f"Term {i}: {a}")
-        # Update a and b for the next iteration
-        a, b = b, a + b
-
-print_fibonacci_series(n)
-
-print('OR')
-
-print('Fibonacci seriers')
-
-n = int(input())
-
-def fib(n):
-    if n <=1:
-        return n
-    else:
-        return fib(n-1) + fib(n-2)
-
-ans = fib(n)
-print(ans)
+# ans = ispal(0,len(string)-1,string)
+# print(ans)
 
 
-# HASHING: Count frequency of each element in an array
+# # Fibonacci series
+# print('Fibonacci seriers')
+# n = int(input("Enter the number of terms: "))
+
+# def print_fibonacci_series(n):
+#     a, b = 0, 1
+#     for i in range(n + 1): # +1 to include the nth term
+#         print(f"Term {i}: {a}")
+#         # Update a and b for the next iteration
+#         a, b = b, a + b
+
+# print_fibonacci_series(n)
+
+# print('OR')
+
+# print('Fibonacci seriers')
+
+# n = int(input())
+
+# def fib(n):
+#     if n <=1:
+#         return n
+#     else:
+#         return fib(n-1) + fib(n-2)
+
+# ans = fib(n)
+# print(ans)
+
+
+# # HASHING: Count frequency of each element in an array
+
+# arr = [10,5,15,10,7,5,14,15,10,2,2,3,5,8,7]
+# print(arr)
+
+# d = {}
+# for item in arr:
+#     d[item] = d.get(item,0) +1 # .get() method is used to retrieve the value of a specific key 
+#                                # from a dictionary.
+
+# print(d)
+
+# # revesing a array
+
+# l = list(map(int,input().split()))
+# print('original list: ',l)
+
+# n = len(l)
+# for i in range(n//2):
+#     l[i],l[n-1-i] = l[n-1-i],l[i]
+# print('reverse list: ',l)
+
+
+# DAY - 13
 
 arr = [10,5,15,10,7,5,14,15,10,2,2,3,5,8,7]
 print(arr)
 
 d = {}
 for item in arr:
-    d[item] = d.get(item,0) +1 # .get() method is used to retrieve the value of a specific key 
-                               # from a dictionary.
+    d[item] = d.get(item,0) +1
 
-print(d)
+# find max and min count
 
-# revesing a array
+mxcount = 0
+mxvalue = -1 # always take a small value
 
-l = list(map(int,input().split()))
-print('original list: ',l)
+mncount = 1000000000    # always take a large value
+mnvalue = -1
 
-n = len(l)
-for i in range(n//2):
-    l[i],l[n-1-i] = l[n-1-i],l[i]
-print('reverse list: ',l)
+
+for key,count in d.items():
+    if mxcount<count:
+        mxvalue = key
+        mxcount = count
+
+    if mncount>count:
+        mnvalue = key
+        mncount = count
+
+print('max count is:',mxcount,'max value is:',mxvalue)
+print('min count is:',mncount,'min value is:',mnvalue)
+
+
+# Sorting
+
+# 1. Selection sort 
+
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        findex = i
+        for j in range(i+1,n):
+            if arr[j]<arr[findex]:
+                findex = j
+        arr[findex],arr[i] = arr[i],arr[findex]
+        return arr
+    
+arr = [64, 25, 12, 22, 11]
+sorted_list = selection_sort(arr)
+print(sorted_list)
+
+
+# Bubble sort              
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+       
+        
+       
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                # Swap the elements
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                
+            
+    return arr
+
+# Example usage:
+test_list = [64, 34, 25, 12, 22, 11, 90]
+print(f"Sorted array: {bubble_sort(test_list)}")     

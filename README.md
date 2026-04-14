@@ -44,6 +44,13 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - Why it matters: The .get(key, default) method returns the default value if the key doesn't exist, eliminating the need for if key in dict checks.
 ## 🛠️ Lessons from the Trenches:
 -  DebuggingRecursive Tree ExplosionInsight: While $f(n-1) + f(n-2)$ is mathematically beautiful, it becomes very slow for large $N$ because it recalculates the same values multiple times. This is my first real-world encounter with the need for Dynamic Programming (Memoization)!
+- **Day 13**: Advanced Hashing & Comparison Sorts. ✅
+- Frequency Analysis: Extended the hashing logic to identify elements with the highest and lowest frequencies.
+- Sorting Foundations: Started the Sorting chapter, focusing on two $O(N^2)$ algorithms: Selection Sort and Bubble Sort.In-Place Swapping: Practiced Python’s elegant tuple unpacking for swapping: arr[i], arr[j] = arr[j], arr[i].
+## 🔢 Mathematical Implementation1. 
+- 1. Selection Sort (Select Min)Strategy: Find the minimum element in the unsorted part and swap it with the first element of that part.Complexity: $O(N^2)$ for both best and worst cases.2. 
+- 2. Bubble Sort (Push Max to End)Strategy: Repeatedly swap adjacent elements if they are in the wrong order.Complexity: $O(N^2)$ (Average/Worst).
+- 3. Frequency TrackingLogic: After building the dictionary with .get(), I iterated through d.items() to compare counts against mxcount and mncount variables.
 ## 🚀 Key Technical 
 - LearningsAlgorithmic Shift: Learned that while the $O(\sqrt{N})$ primality test is perfect for a single number, it becomes a bottleneck when checking a large range.
 - The Sieve Logic: Implemented the Sieve of Eratosthenes to systematically "strike out" multiples of each prime, ensuring each composite number is marked only when necessary.
