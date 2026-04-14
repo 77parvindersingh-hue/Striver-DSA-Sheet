@@ -35,6 +35,15 @@ By using the **uv** package manager and custom VS Code tasks, I can run and test
 - Encountered RecursionError while testing larger ranges.
 - Cause: Missing or unreachable Base Case. If the condition if n == 0 is never met, the function calls itself until the computer runs out of memory.
 - Solution: Always ensure the input variable is moving toward the base case (e.g., $n-1$) and that the base case is defined before the recursive call.
+- **Day 12**: Functional Recursion & Hashing Foundations. ✅
+- Functional Recursion: Moved beyond printing values to returning them up the stack. Implemented the Fibonacci series, where each call returns the sum of the two preceding calls.
+- Hashing & Frequency Arrays: Learned that hashing is the process of mapping data to a fixed size for faster access. This is the key to solving "Count Frequency" problems in $O(N)$ time. 
+- Python Dictionary Optimization: Integrated the .get() method to handle frequency counting efficiently.
+## 🔢 Mathematical Implementation
+- Recursive String/List ManipulationPalindrome Check: Used two pointers $(s, e)$ in a recursive function to compare characters from both ends of the string "ABBA".Fibonacci Series: Implemented $f(n) = f(n-1) + f(n-2)$, visualizing the recursive tree and the exponential increase in calls.Frequency Counting (Hashing)The .get() Method: Used d[item] = d.get(item, 0) + 1.
+- Why it matters: The .get(key, default) method returns the default value if the key doesn't exist, eliminating the need for if key in dict checks.
+## 🛠️ Lessons from the Trenches:
+-  DebuggingRecursive Tree ExplosionInsight: While $f(n-1) + f(n-2)$ is mathematically beautiful, it becomes very slow for large $N$ because it recalculates the same values multiple times. This is my first real-world encounter with the need for Dynamic Programming (Memoization)!
 ## 🚀 Key Technical 
 - LearningsAlgorithmic Shift: Learned that while the $O(\sqrt{N})$ primality test is perfect for a single number, it becomes a bottleneck when checking a large range.
 - The Sieve Logic: Implemented the Sieve of Eratosthenes to systematically "strike out" multiples of each prime, ensuring each composite number is marked only when necessary.

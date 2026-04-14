@@ -706,80 +706,149 @@
 
 
 
-# DAY - 11
+# # DAY - 11
 
 
-# Recursion: It is a process of calling a function again and again until a specific condtion is met
+# # Recursion: It is a process of calling a function again and again until a specific condtion is met
 
 
-# Questions - 
+# # Questions - 
 
-# 1. Print a Name n times
+# # 1. Print a Name n times
 
-def printN(n):
-    if n==0:
-        return
-    print('raj')
-    printN(n-1)
+# def printN(n):
+#     if n==0:
+#         return
+#     print('raj')
+#     printN(n-1)
 
-printN(5)
-
-
-# 2. Print 1 to n using recursion
-
-def print1toN(i,n):
-    if i>n:
-        return
-    print(i)
-    print1toN(i+1,n)
-
-print1toN(1,7)
-
-# 3. Print n to 1 using recursion
-
-print('n to 1 using recursion')
+# printN(5)
 
 
-def printnto1(i,n):
-    if i<n:
-        return
-    print(i)
-    printnto1(i-1,n)
+# # 2. Print 1 to n using recursion
 
-printnto1(7,1)
+# def print1toN(i,n):
+#     if i>n:
+#         return
+#     print(i)
+#     print1toN(i+1,n)
+
+# print1toN(1,7)
+
+# # 3. Print n to 1 using recursion
+
+# print('n to 1 using recursion')
 
 
-# 4. Sum of n numbers
+# def printnto1(i,n):
+#     if i<n:
+#         return
+#     print(i)
+#     printnto1(i-1,n)
 
-print('sum of n numbers')
+# printnto1(7,1)
 
-n =5
-sm = 0
-for i in range(1,n+1):
-    sm = sm+i
-    print(sm)
 
-# Recursion approcach
+# # 4. Sum of n numbers
 
-print('recursion approach')
+# print('sum of n numbers')
 
-def sum(i,n,sm):
-    if i>n:
-        return sm
-    return sum(i+1,n,sm+i)
+# n =5
+# sm = 0
+# for i in range(1,n+1):
+#     sm = sm+i
+#     print(sm)
 
-ans = sum(1,7,0)
+# # Recursion approcach
+
+# print('recursion approach')
+
+# def sum(i,n,sm):
+#     if i>n:
+#         return sm
+#     return sum(i+1,n,sm+i)
+
+# ans = sum(1,7,0)
+# print(ans)
+
+# #  5. Factorial of a number
+
+# print('factorial of a number')
+
+# def fact(i,n,ans):
+#     if i>n:
+#         return ans
+#     return fact(i+1,n,ans*i)
+
+# a = fact(1,5,1)
+# print(a)
+
+
+# DAY - 12
+
+
+# 1. Check whether a string is a palidrome or not by recursion 
+
+string = input()
+
+def ispal(s,e,string):
+    if s>e:
+        return True
+    if string[s]!=string[e]:
+        return False
+    return ispal(s+1,e-1,string)
+
+ans = ispal(0,len(string)-1,string)
 print(ans)
 
-#  5. Factorial of a number
 
-print('factorial of a number')
+# Fibonacci series
+print('Fibonacci seriers')
+n = int(input("Enter the number of terms: "))
 
-def fact(i,n,ans):
-    if i>n:
-        return ans
-    return fact(i+1,n,ans*i)
+def print_fibonacci_series(n):
+    a, b = 0, 1
+    for i in range(n + 1): # +1 to include the nth term
+        print(f"Term {i}: {a}")
+        # Update a and b for the next iteration
+        a, b = b, a + b
 
-a = fact(1,5,1)
-print(a)
+print_fibonacci_series(n)
 
+print('OR')
+
+print('Fibonacci seriers')
+
+n = int(input())
+
+def fib(n):
+    if n <=1:
+        return n
+    else:
+        return fib(n-1) + fib(n-2)
+
+ans = fib(n)
+print(ans)
+
+
+# HASHING: Count frequency of each element in an array
+
+arr = [10,5,15,10,7,5,14,15,10,2,2,3,5,8,7]
+print(arr)
+
+d = {}
+for item in arr:
+    d[item] = d.get(item,0) +1 # .get() method is used to retrieve the value of a specific key 
+                               # from a dictionary.
+
+print(d)
+
+# revesing a array
+
+l = list(map(int,input().split()))
+print('original list: ',l)
+
+n = len(l)
+for i in range(n//2):
+    l[i],l[n-1-i] = l[n-1-i],l[i]
+print('reverse list: ',l)
