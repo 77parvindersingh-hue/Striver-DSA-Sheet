@@ -1,5 +1,11 @@
-[10, 5, 15, 10, 7, 5, 14, 15, 10, 2, 2, 3, 5, 8, 7]
-max count is: 3 max value is: 10
-min count is: 1 min value is: 14
-[11, 25, 12, 22, 64]
-Sorted array: [11, 12, 22, 25, 34, 64, 90]
+result of Insertion sort is
+[3, 4, 5, 10, 11, 12, 12, 45, 48]
+result of merge sort is
+[3, 5, 6, 7, 12, 12, 45, 53, 487, 694]
+result of quick sort is
+[1, 5, 7, 8, 9, 10]
+[4, 5, 5, 6, 8, 74]
+or
+orignal array [8, 5, 6, 4, 74, 5]
+sorted array [4, 5, 5, 6, 8, 74]
+[[1, 2], [1, 4], [2, 4], [4, 5], [6, 7]]

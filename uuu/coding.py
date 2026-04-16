@@ -854,72 +854,196 @@
 # print('reverse list: ',l)
 
 
-# DAY - 13
+# # DAY - 13
 
-arr = [10,5,15,10,7,5,14,15,10,2,2,3,5,8,7]
-print(arr)
+# arr = [10,5,15,10,7,5,14,15,10,2,2,3,5,8,7]
+# print(arr)
 
-d = {}
-for item in arr:
-    d[item] = d.get(item,0) +1
+# d = {}
+# for item in arr:
+#     d[item] = d.get(item,0) +1
 
-# find max and min count
+# # find max and min count
 
-mxcount = 0
-mxvalue = -1 # always take a small value
+# mxcount = 0
+# mxvalue = -1 # always take a small value
 
-mncount = 1000000000    # always take a large value
-mnvalue = -1
-
-
-for key,count in d.items():
-    if mxcount<count:
-        mxvalue = key
-        mxcount = count
-
-    if mncount>count:
-        mnvalue = key
-        mncount = count
-
-print('max count is:',mxcount,'max value is:',mxvalue)
-print('min count is:',mncount,'min value is:',mnvalue)
+# mncount = 1000000000    # always take a large value
+# mnvalue = -1
 
 
-# Sorting
+# for key,count in d.items():
+#     if mxcount<count:
+#         mxvalue = key
+#         mxcount = count
 
-# 1. Selection sort 
+#     if mncount>count:
+#         mnvalue = key
+#         mncount = count
 
-def selection_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        findex = i
-        for j in range(i+1,n):
-            if arr[j]<arr[findex]:
-                findex = j
-        arr[findex],arr[i] = arr[i],arr[findex]
-        return arr
+# print('max count is:',mxcount,'max value is:',mxvalue)
+# print('min count is:',mncount,'min value is:',mnvalue)
+
+
+# # Sorting
+
+# # 1. Selection sort 
+
+# def selection_sort(arr):
+#     n = len(arr)
+#     for i in range(n):
+#         findex = i
+#         for j in range(i+1,n):
+#             if arr[j]<arr[findex]:
+#                 findex = j
+#         arr[findex],arr[i] = arr[i],arr[findex]
+#         return arr
     
-arr = [64, 25, 12, 22, 11]
-sorted_list = selection_sort(arr)
-print(sorted_list)
+# arr = [64, 25, 12, 22, 11]
+# sorted_list = selection_sort(arr)
+# print(sorted_list)
 
 
-# Bubble sort              
+# # Bubble sort              
 
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
+# def bubble_sort(arr):
+#     n = len(arr)
+#     for i in range(n):
        
         
        
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                # Swap the elements
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+#         for j in range(0, n - i - 1):
+#             if arr[j] > arr[j + 1]:
+#                 # Swap the elements
+#                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 
             
+#     return arr
+
+# # Example usage:
+# test_list = [64, 34, 25, 12, 22, 11, 90]
+# print(f"Sorted array: {bubble_sort(test_list)}")     
+
+
+# DAY - 14
+
+# Insertion Sort
+
+print('result of Insertion sort is')
+
+
+def insertionsort(arr):
+    n = len(arr)
+
+    for i in range(1,n):
+        j = i
+        while j>0 and arr[j]<arr[j-1]:
+            arr[j],arr[j-1] = arr[j-1],arr[j]
+            j -=1
     return arr
 
+arr = [12,45,11,10,5,12,3,48,4]
+ans = insertionsort(arr)
+print(ans)
+
+
+# Merge sort
+
+print('result of merge sort is')
+
+
+def mergesort(arr, s, e):
+    if s >= e: # Base case: if the section has 1 or 0 elements, it's sorted
+        return
+
+    mid = (s + e) // 2
+    mergesort(arr, s, mid)
+    mergesort(arr, mid + 1, e)
+
+    # Create temporary copies of the sub-arrays
+    left = arr[s:mid+1]
+    right = arr[mid+1:e+1]
+
+    i, j, k = 0, 0, s
+
+    # Merge the two halves back together in order
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            arr[k] = left[i]
+            i += 1
+        else:
+            arr[k] = right[j]
+            j += 1
+        k += 1
+
+    # KEY FIX: Copy remaining elements of left[] if any
+    while i < len(left):
+        arr[k] = left[i]
+        i += 1
+        k += 1
+
+    # Copy remaining elements of right[] if any
+    while j < len(right):
+        arr[k] = right[j]
+        j += 1
+        k += 1
+
+    return arr
+
+arr = [12, 45, 7, 5,694, 12, 3, 53, 6, 487]
+# Note: Use len(arr)-1 to sort the entire list
+mergesort(arr, 0, len(arr) - 1) 
+print(arr)
+
+
+
+# Quick sort
+
+print('result of quick sort is')
+
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1  # Index of smaller element
+    
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+            
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return i + 1
+
+def quick_sort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        
+        # Separately sort elements before and after partition
+        quick_sort(arr, low, pi - 1)
+        quick_sort(arr, pi + 1, high)
+
 # Example usage:
-test_list = [64, 34, 25, 12, 22, 11, 90]
-print(f"Sorted array: {bubble_sort(test_list)}")     
+data = [10, 7, 8, 9, 1, 5]
+quick_sort(data, 0, len(data) - 1)
+print(data)
+
+
+# Built in Python function for Sorting 
+
+arr = [8,5,6,4,74,5]
+
+arr.sort()
+print(arr)
+
+# or
+print('or')
+arr = [8,5,6,4,74,5] 
+
+arr1 = sorted(arr)
+
+print('orignal array',arr)
+print('sorted array',arr1)
+
+
+arr = [[4,5],[2,4],[1,2],[1,4],[6,7]]
+arr.sort()
+print(arr)

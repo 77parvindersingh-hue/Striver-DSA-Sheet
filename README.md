@@ -107,6 +107,17 @@ I explored how Python handles data in memory using the `id()` function:
 - **Type Casting**: Converting between collections (e.g., `list(set(obj))` to get unique elements).
 - **Zipping**: Combining lists into dictionaries using `zip()`.
 - **Boolean Logic**: Understanding "Truthy" and "Falsy" values in Python collections.
+
+- **Day 14**: Advanced Sorting & Divide and Conquer ✅
+- Insertion Sort: Implemented the logic of placing each element in its correct position relative to the already sorted part of the array.
+- Merge Sort: Leveraged recursion to divide arrays into single elements and then merge them back in sorted order. Learned that it is a stable sort with $O(N \log N)$ time complexity.
+- Quick Sort: Practiced the partition algorithm, using a pivot to rearrange elements. Explored how recursive sub-problems are solved in-place.Python Built-in Sorting: Experimented with .sort() and sorted() for basic lists and nested structures (lists of lists).
+## 🔢 Mathematical Implementation1. 
+- 1. Merge Sort (The Merge Step)Concept: Uses three pointers ($i, j, k$) to compare elements from two temporary sub-arrays (left and right) and place the smaller one back into the original array.Complexity: Always $O(N \log N)$ because the division is always logarithmic and the merge is linear.
+- 2. Quick Sort (The Partition Step)Pivot Logic: Selected the last element as the pivot and moved all smaller elements to its left using an index pointer $i$.Recursion: Once the pivot is in its final "sorted" spot, the function calls itself for the left and right partitions.
+- 3. Multi-Dimensional SortingTested Python's ability to sort nested lists like [[4,5],[2,4],[1,2],[1,4],[6,7]]. 
+- Observations: Python sorts based on the first element, then the second by default.
+
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)
