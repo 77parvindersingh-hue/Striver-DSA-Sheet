@@ -925,125 +925,217 @@
 # print(f"Sorted array: {bubble_sort(test_list)}")     
 
 
-# DAY - 14
+# # DAY - 14
 
-# Insertion Sort
+# # Insertion Sort
 
-print('result of Insertion sort is')
-
-
-def insertionsort(arr):
-    n = len(arr)
-
-    for i in range(1,n):
-        j = i
-        while j>0 and arr[j]<arr[j-1]:
-            arr[j],arr[j-1] = arr[j-1],arr[j]
-            j -=1
-    return arr
-
-arr = [12,45,11,10,5,12,3,48,4]
-ans = insertionsort(arr)
-print(ans)
+# print('result of Insertion sort is')
 
 
-# Merge sort
+# def insertionsort(arr):
+#     n = len(arr)
 
-print('result of merge sort is')
+#     for i in range(1,n):
+#         j = i
+#         while j>0 and arr[j]<arr[j-1]:
+#             arr[j],arr[j-1] = arr[j-1],arr[j]
+#             j -=1
+#     return arr
 
-
-def mergesort(arr, s, e):
-    if s >= e: # Base case: if the section has 1 or 0 elements, it's sorted
-        return
-
-    mid = (s + e) // 2
-    mergesort(arr, s, mid)
-    mergesort(arr, mid + 1, e)
-
-    # Create temporary copies of the sub-arrays
-    left = arr[s:mid+1]
-    right = arr[mid+1:e+1]
-
-    i, j, k = 0, 0, s
-
-    # Merge the two halves back together in order
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            arr[k] = left[i]
-            i += 1
-        else:
-            arr[k] = right[j]
-            j += 1
-        k += 1
-
-    # KEY FIX: Copy remaining elements of left[] if any
-    while i < len(left):
-        arr[k] = left[i]
-        i += 1
-        k += 1
-
-    # Copy remaining elements of right[] if any
-    while j < len(right):
-        arr[k] = right[j]
-        j += 1
-        k += 1
-
-    return arr
-
-arr = [12, 45, 7, 5,694, 12, 3, 53, 6, 487]
-# Note: Use len(arr)-1 to sort the entire list
-mergesort(arr, 0, len(arr) - 1) 
-print(arr)
+# arr = [12,45,11,10,5,12,3,48,4]
+# ans = insertionsort(arr)
+# print(ans)
 
 
+# # Merge sort
 
-# Quick sort
+# print('result of merge sort is')
 
-print('result of quick sort is')
 
-def partition(arr, low, high):
-    pivot = arr[high]
-    i = low - 1  # Index of smaller element
+# def mergesort(arr, s, e):
+#     if s >= e: # Base case: if the section has 1 or 0 elements, it's sorted
+#         return
+
+#     mid = (s + e) // 2
+#     mergesort(arr, s, mid)
+#     mergesort(arr, mid + 1, e)
+
+#     # Create temporary copies of the sub-arrays
+#     left = arr[s:mid+1]
+#     right = arr[mid+1:e+1]
+
+#     i, j, k = 0, 0, s
+
+#     # Merge the two halves back together in order
+#     while i < len(left) and j < len(right):
+#         if left[i] <= right[j]:
+#             arr[k] = left[i]
+#             i += 1
+#         else:
+#             arr[k] = right[j]
+#             j += 1
+#         k += 1
+
+#     # KEY FIX: Copy remaining elements of left[] if any
+#     while i < len(left):
+#         arr[k] = left[i]
+#         i += 1
+#         k += 1
+
+#     # Copy remaining elements of right[] if any
+#     while j < len(right):
+#         arr[k] = right[j]
+#         j += 1
+#         k += 1
+
+#     return arr
+
+# arr = [12, 45, 7, 5,694, 12, 3, 53, 6, 487]
+# # Note: Use len(arr)-1 to sort the entire list
+# mergesort(arr, 0, len(arr) - 1) 
+# print(arr)
+
+
+
+# # Quick sort
+
+# print('result of quick sort is')
+
+# def partition(arr, low, high):
+#     pivot = arr[high]
+#     i = low - 1  # Index of smaller element
     
-    for j in range(low, high):
-        if arr[j] <= pivot:
-            i += 1
-            arr[i], arr[j] = arr[j], arr[i]
+#     for j in range(low, high):
+#         if arr[j] <= pivot:
+#             i += 1
+#             arr[i], arr[j] = arr[j], arr[i]
             
-    arr[i+1], arr[high] = arr[high], arr[i+1]
-    return i + 1
+#     arr[i+1], arr[high] = arr[high], arr[i+1]
+#     return i + 1
 
-def quick_sort(arr, low, high):
-    if low < high:
-        pi = partition(arr, low, high)
+# def quick_sort(arr, low, high):
+#     if low < high:
+#         pi = partition(arr, low, high)
         
-        # Separately sort elements before and after partition
-        quick_sort(arr, low, pi - 1)
-        quick_sort(arr, pi + 1, high)
+#         # Separately sort elements before and after partition
+#         quick_sort(arr, low, pi - 1)
+#         quick_sort(arr, pi + 1, high)
 
-# Example usage:
-data = [10, 7, 8, 9, 1, 5]
-quick_sort(data, 0, len(data) - 1)
-print(data)
-
-
-# Built in Python function for Sorting 
-
-arr = [8,5,6,4,74,5]
-
-arr.sort()
-print(arr)
-
-# or
-print('or')
-arr = [8,5,6,4,74,5] 
-
-arr1 = sorted(arr)
-
-print('orignal array',arr)
-print('sorted array',arr1)
+# # Example usage:
+# data = [10, 7, 8, 9, 1, 5]
+# quick_sort(data, 0, len(data) - 1)
+# print(data)
 
 
-arr = [[4,5],[2,4],[1,2],[1,4],[6,7]]
-arr.sort()
-print(arr)
+# # Built in Python function for Sorting 
+
+# arr = [8,5,6,4,74,5]
+
+# arr.sort()
+# print(arr)
+
+# # or
+# print('or')
+# arr = [8,5,6,4,74,5] 
+
+# arr1 = sorted(arr)
+
+# print('orignal array',arr)
+# print('sorted array',arr1)
+
+
+# arr = [[4,5],[2,4],[1,2],[1,4],[6,7]]
+# arr.sort()
+# print(arr)
+
+
+# DAY - 15
+
+# ARRAYS
+
+# Largest element in an array 
+
+
+
+def find_largest(arr):
+   
+    
+    # Initialize max with the first element
+    max_val = arr[0]
+    
+    for num in arr:
+        if num > max_val:
+            max_val = num
+            
+    return max_val
+
+arr = [12,467,161,21,2,62,196,236]
+ans = find_largest(arr)
+print('largest element is:',ans)
+
+# Smallest element in an array 
+
+def find_smallest(arr):
+   
+    
+    # Initialize max with the first element
+    min_val = arr[0]
+    
+    for num in arr:
+        if num < min_val:
+            min_val = num
+            
+    return min_val
+
+arr = [12,467,161,21,2,62,196,236]
+ans = find_smallest(arr)
+print('smallest element is:',ans)
+
+
+
+# Finding second smallest in an array 
+
+def find_second_smallest(arr):
+    
+
+    smallest = float('inf')
+    second_smallest = float('inf')
+
+    for num in arr:
+        if num < smallest:
+            second_smallest = smallest
+            smallest = num
+        elif num < second_smallest and num != smallest:
+            second_smallest = num
+
+    # Return None if no unique second smallest exists (e.g., [10, 10])
+    return second_smallest if second_smallest != float('inf') else None
+
+# Test
+arr = [12, 467, 161, 21, 2, 62, 196, 236]
+ans = find_second_smallest(arr)
+print('Second smallest element is:', ans)
+
+
+# Finding second smallest in an array 
+
+def find_second_largest(arr):
+    
+
+    largest = -float('inf')
+    find_second_largest = -float('inf')
+
+    for num in arr:
+        if num > largest:
+            second_largest = largest 
+            largest = num
+        elif num > second_largest and num != largest:
+            second_largest = num
+
+    # Return None if no unique second smallest exists (e.g., [10, 10])
+    return second_largest if second_largest != -float('inf') else None
+
+# Test
+arr = [12, 467, 161, 21, 2, 62, 196, 236]
+ans = find_second_largest(arr)
+print('Second largest element is:', ans)

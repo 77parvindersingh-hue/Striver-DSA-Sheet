@@ -112,12 +112,24 @@ I explored how Python handles data in memory using the `id()` function:
 - Insertion Sort: Implemented the logic of placing each element in its correct position relative to the already sorted part of the array.
 - Merge Sort: Leveraged recursion to divide arrays into single elements and then merge them back in sorted order. Learned that it is a stable sort with $O(N \log N)$ time complexity.
 - Quick Sort: Practiced the partition algorithm, using a pivot to rearrange elements. Explored how recursive sub-problems are solved in-place.Python Built-in Sorting: Experimented with .sort() and sorted() for basic lists and nested structures (lists of lists).
-## 🔢 Mathematical Implementation1. 
+## 🔢 Mathematical Implementation
 - 1. Merge Sort (The Merge Step)Concept: Uses three pointers ($i, j, k$) to compare elements from two temporary sub-arrays (left and right) and place the smaller one back into the original array.Complexity: Always $O(N \log N)$ because the division is always logarithmic and the merge is linear.
 - 2. Quick Sort (The Partition Step)Pivot Logic: Selected the last element as the pivot and moved all smaller elements to its left using an index pointer $i$.Recursion: Once the pivot is in its final "sorted" spot, the function calls itself for the left and right partitions.
 - 3. Multi-Dimensional SortingTested Python's ability to sort nested lists like [[4,5],[2,4],[1,2],[1,4],[6,7]]. 
 - Observations: Python sorts based on the first element, then the second by default.
 
+- **Day 15**: Array Basics - Extremes & Second Extremes. 
+- Largest/Smallest: Basic $O(N)$ traversal to find the maximum and minimum values in a single loop.
+- Optimal Second Extremes: Developed a one-pass algorithm to find the second-best values.
+- Efficiency Goal: Reduced time complexity from $O(N \log N)$ to $O(N)$ and space complexity to $O(1)$.
+## 🔢 Mathematical Implementation
+- 1. Finding the Second Smallest
+
+- Logic:
+- Initialize smallest and second_smallest to infinity (float('inf')).
+- If current num < smallest, update second_smallest to the old smallest and set new smallest to num.
+- Else if num < second_smallest and num != smallest, update only second_smallest.
+- Result: Found 2 as smallest and 12 as second smallest for the test array.
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)
