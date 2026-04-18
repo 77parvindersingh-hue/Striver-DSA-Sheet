@@ -130,6 +130,20 @@ I explored how Python handles data in memory using the `id()` function:
 - If current num < smallest, update second_smallest to the old smallest and set new smallest to num.
 - Else if num < second_smallest and num != smallest, update only second_smallest.
 - Result: Found 2 as smallest and 12 as second smallest for the test array.
+
+- **Day 16**: Array Basics - Recursion & Searching 🔍
+- Is Array Sorted:Iterative Approach: Uses a simple loop comparing neighbors ($O(N)$ time complexity).
+- Recursive Approach: Compares the first two elements and recurses on the remainder of the list ($O(N^2)$ space complexity due to list slicing).
+- Linear Search (Recursive): Traverses the array by passing an index parameter. 
+- Returns the index if the target is found, otherwise returns -1.
+## 🔢 Mathematical Implementation
+- 1. Checking Sorted State
+- Recursive Logic: if arr[0] > arr[1]: return False. Else, return issort(arr[1:]).
+- Note: List slicing arr[1:] in Python creates a copy, which increases space complexity compared to passing an index.
+- 2. Recursive Linear Search
+- Base Case: If index >= len(arr), return -1 (Item not found).
+- Target Found: If arr[index] == target, return index.Recursive Step: linear_search(arr, target, index + 1).
+
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)

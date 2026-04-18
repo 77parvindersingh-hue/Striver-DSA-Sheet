@@ -1049,93 +1049,160 @@
 # print(arr)
 
 
-# DAY - 15
+# # DAY - 15
 
-# ARRAYS
+# # ARRAYS
 
-# Largest element in an array 
+# # Largest element in an array 
 
 
 
-def find_largest(arr):
+# def find_largest(arr):
    
     
-    # Initialize max with the first element
-    max_val = arr[0]
+#     # Initialize max with the first element
+#     max_val = arr[0]
     
-    for num in arr:
-        if num > max_val:
-            max_val = num
+#     for num in arr:
+#         if num > max_val:
+#             max_val = num
             
-    return max_val
+#     return max_val
 
-arr = [12,467,161,21,2,62,196,236]
-ans = find_largest(arr)
-print('largest element is:',ans)
+# arr = [12,467,161,21,2,62,196,236]
+# ans = find_largest(arr)
+# print('largest element is:',ans)
 
-# Smallest element in an array 
+# # Smallest element in an array 
 
-def find_smallest(arr):
+# def find_smallest(arr):
    
     
-    # Initialize max with the first element
-    min_val = arr[0]
+#     # Initialize max with the first element
+#     min_val = arr[0]
     
-    for num in arr:
-        if num < min_val:
-            min_val = num
+#     for num in arr:
+#         if num < min_val:
+#             min_val = num
             
-    return min_val
+#     return min_val
 
-arr = [12,467,161,21,2,62,196,236]
-ans = find_smallest(arr)
-print('smallest element is:',ans)
+# arr = [12,467,161,21,2,62,196,236]
+# ans = find_smallest(arr)
+# print('smallest element is:',ans)
 
 
 
-# Finding second smallest in an array 
+# # Finding second smallest in an array 
 
-def find_second_smallest(arr):
+# def find_second_smallest(arr):
     
 
-    smallest = float('inf')
-    second_smallest = float('inf')
+#     smallest = float('inf')
+#     second_smallest = float('inf')
 
-    for num in arr:
-        if num < smallest:
-            second_smallest = smallest
-            smallest = num
-        elif num < second_smallest and num != smallest:
-            second_smallest = num
+#     for num in arr:
+#         if num < smallest:
+#             second_smallest = smallest
+#             smallest = num
+#         elif num < second_smallest and num != smallest:
+#             second_smallest = num
 
-    # Return None if no unique second smallest exists (e.g., [10, 10])
-    return second_smallest if second_smallest != float('inf') else None
+#     # Return None if no unique second smallest exists (e.g., [10, 10])
+#     return second_smallest if second_smallest != float('inf') else None
 
-# Test
-arr = [12, 467, 161, 21, 2, 62, 196, 236]
-ans = find_second_smallest(arr)
-print('Second smallest element is:', ans)
+# # Test
+# arr = [12, 467, 161, 21, 2, 62, 196, 236]
+# ans = find_second_smallest(arr)
+# print('Second smallest element is:', ans)
 
 
-# Finding second smallest in an array 
+# # Finding second smallest in an array 
 
-def find_second_largest(arr):
+# def find_second_largest(arr):
     
 
-    largest = -float('inf')
-    find_second_largest = -float('inf')
+#     largest = -float('inf')
+#     find_second_largest = -float('inf')
 
-    for num in arr:
-        if num > largest:
-            second_largest = largest 
-            largest = num
-        elif num > second_largest and num != largest:
-            second_largest = num
+#     for num in arr:
+#         if num > largest:
+#             second_largest = largest 
+#             largest = num
+#         elif num > second_largest and num != largest:
+#             second_largest = num
 
-    # Return None if no unique second smallest exists (e.g., [10, 10])
-    return second_largest if second_largest != -float('inf') else None
+#     # Return None if no unique second smallest exists (e.g., [10, 10])
+#     return second_largest if second_largest != -float('inf') else None
 
-# Test
-arr = [12, 467, 161, 21, 2, 62, 196, 236]
-ans = find_second_largest(arr)
-print('Second largest element is:', ans)
+# # Test
+# arr = [12, 467, 161, 21, 2, 62, 196, 236]
+# ans = find_second_largest(arr)
+# print('Second largest element is:', ans)
+
+
+# DAY - 16
+
+# Checking is the array sorted or not 
+
+# Usig Iteration
+
+arr = [1,2,3,4,5,6,7]
+
+n = len(arr)
+
+issort = True
+
+for i in range(n-2):
+    if arr[i]>arr[i+1]:
+        issort = False
+        break
+print(issort)
+
+# Time Complexity O(n)
+
+# Using Recursion
+
+def issort(arr):
+
+    if len(arr) <= 1:
+        return True 
+    
+    if arr[0] > arr[1]:
+        return False
+    
+    return issort(arr[1:]) 
+
+
+arr = [1,2,3,4,5,6,7,8]
+ans = issort(arr)
+print(ans)
+
+# Time complexity O(n**2)
+
+
+
+# Linear Search Using Recursion
+
+def linear_search(arr, target, index):
+    
+    if index >= len(arr):
+        return -1   # If elememnt not found in array 
+    
+
+    if arr[index] == target:
+        return index  # if target is the first index
+    
+    return linear_search(arr, target, index + 1) # when we have to find in array
+
+
+data = [10, 50, 30, 70, 80]
+result = linear_search(data, 20,0)
+
+if result != -1:
+    print(result)
+else:
+    print("Item not found.")
+
+
+ 
