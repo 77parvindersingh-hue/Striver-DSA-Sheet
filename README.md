@@ -144,6 +144,15 @@ I explored how Python handles data in memory using the `id()` function:
 - Base Case: If index >= len(arr), return -1 (Item not found).
 - Target Found: If arr[index] == target, return index.Recursive Step: linear_search(arr, target, index + 1).
 
+- **Day 17**: Array Manipulation - In-Place Operations ⚙️
+- Move Zeros to End: - 
+- Logic: Used a write_pointer to keep track of non-zero positions.
+- Efficiency: $O(N)$ Time Complexity, $O(1)$ Space Complexity.
+- Left Rotate Array by One: - Logic: Stored the first element in a temporary variable, shifted the rest of the array using a loop, and appended the temp to the end.
+## 🔢 Algorithmic Insight
+- Pointer Logic: In the "Move Zeros" problem, the write_pointer only increments when a non-zero number is encountered, effectively "pushing" all zeros to the back as the loop progresses.
+- Rotation Logic: By using a temporary variable, we avoid the overhead of allocating a new array, making the rotation process highly memory-efficient.
+
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)

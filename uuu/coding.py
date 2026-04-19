@@ -1141,68 +1141,114 @@
 # print('Second largest element is:', ans)
 
 
-# DAY - 16
+# # DAY - 16
 
-# Checking is the array sorted or not 
+# # Checking is the array sorted or not 
 
-# Usig Iteration
+# # Usig Iteration
 
-arr = [1,2,3,4,5,6,7]
+# arr = [1,2,3,4,5,6,7]
 
-n = len(arr)
+# n = len(arr)
 
-issort = True
+# issort = True
 
-for i in range(n-2):
-    if arr[i]>arr[i+1]:
-        issort = False
-        break
-print(issort)
+# for i in range(n-2):
+#     if arr[i]>arr[i+1]:
+#         issort = False
+#         break
+# print(issort)
 
-# Time Complexity O(n)
+# # Time Complexity O(n)
 
-# Using Recursion
+# # Using Recursion
 
-def issort(arr):
+# def issort(arr):
 
+#     if len(arr) <= 1:
+#         return True 
+    
+#     if arr[0] > arr[1]:
+#         return False
+    
+#     return issort(arr[1:]) 
+
+
+# arr = [1,2,3,4,5,6,7,8]
+# ans = issort(arr)
+# print(ans)
+
+# # Time complexity O(n**2)
+
+
+
+# # Linear Search Using Recursion
+
+# def linear_search(arr, target, index):
+    
+#     if index >= len(arr):
+#         return -1   # If elememnt not found in array 
+    
+
+#     if arr[index] == target:
+#         return index  # if target is the first index
+    
+#     return linear_search(arr, target, index + 1) # when we have to find in array
+
+
+# data = [10, 50, 30, 70, 80]
+# result = linear_search(data, 20,0)
+
+# if result != -1:
+#     print(result)
+# else:
+#     print("Item not found.")
+
+
+
+# DAY - 17
+
+# putting all the zeros in an array at the end
+
+def move_zeros(nums):
+    write_pointer = 0
+    
+    # Iterate through the array
+    for read_pointer in range(len(nums)):
+        # If the current element is non-zero, swap it
+        if nums[read_pointer] != 0:
+            nums[write_pointer], nums[read_pointer] = nums[read_pointer], nums[write_pointer]
+            write_pointer += 1
+            
+    return nums
+
+# Example Usage:
+arr = [0, 1, 0, 3, 12]
+move_zeros(arr)
+print(arr) 
+
+
+#  left rotate an array by one place
+
+def left_rotate_by_one(arr):
+    # Handle empty or single-element arrays
     if len(arr) <= 1:
-        return True 
+        return arr
     
-    if arr[0] > arr[1]:
-        return False
+    # Step 1: Save the first element
+    temp = arr[0]
     
-    return issort(arr[1:]) 
-
-
-arr = [1,2,3,4,5,6,7,8]
-ans = issort(arr)
-print(ans)
-
-# Time complexity O(n**2)
-
-
-
-# Linear Search Using Recursion
-
-def linear_search(arr, target, index):
+    # Step 2: Shift remaining elements to the left
+    for i in range(1, len(arr)):
+        arr[i-1] = arr[i]
+        
+    # Step 3: Put the first element at the end
+    arr[-1] = temp
     
-    if index >= len(arr):
-        return -1   # If elememnt not found in array 
-    
+    return arr
 
-    if arr[index] == target:
-        return index  # if target is the first index
-    
-    return linear_search(arr, target, index + 1) # when we have to find in array
+# Example Usage:
+my_list = [1, 2, 3, 4, 5]
+left_rotate_by_one(my_list)
+print(my_list)
 
-
-data = [10, 50, 30, 70, 80]
-result = linear_search(data, 20,0)
-
-if result != -1:
-    print(result)
-else:
-    print("Item not found.")
-
-
- 
