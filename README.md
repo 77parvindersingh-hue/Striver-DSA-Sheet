@@ -111,6 +111,9 @@ I explored how Python handles data in memory using the `id()` function:
 - **Day 14**: Advanced Sorting & Divide and Conquer ✅
 - Insertion Sort: Implemented the logic of placing each element in its correct position relative to the already sorted part of the array.
 - Merge Sort: Leveraged recursion to divide arrays into single elements and then merge them back in sorted order. Learned that it is a stable sort with $O(N \log N)$ time complexity.
+
+
+AUR BHAI AKELE AKELE PADH RHA HAI DSA           PULL REQUEST ACCEPT MAARDE YEH WALI PHIR AAGE SE AUR CHANGE KARUNGA CODE MEI
 - Quick Sort: Practiced the partition algorithm, using a pivot to rearrange elements. Explored how recursive sub-problems are solved in-place.Python Built-in Sorting: Experimented with .sort() and sorted() for basic lists and nested structures (lists of lists).
 ## 🔢 Mathematical Implementation
 - 1. Merge Sort (The Merge Step)Concept: Uses three pointers ($i, j, k$) to compare elements from two temporary sub-arrays (left and right) and place the smaller one back into the original array.Complexity: Always $O(N \log N)$ because the division is always logarithmic and the merge is linear.
