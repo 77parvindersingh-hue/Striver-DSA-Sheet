@@ -153,6 +153,18 @@ I explored how Python handles data in memory using the `id()` function:
 - Pointer Logic: In the "Move Zeros" problem, the write_pointer only increments when a non-zero number is encountered, effectively "pushing" all zeros to the back as the loop progresses.
 - Rotation Logic: By using a temporary variable, we avoid the overhead of allocating a new array, making the rotation process highly memory-efficient.
 
+- **Day 18** Array Manipulation - Advanced Rotations & Merging 🔄
+- Rotate Array by K: Implemented the reversal trick:
+- 1. Reverse elements 0 to k-1.
+- 2. Reverse elements k to n-1.
+- 3. Reverse the whole array 0 to n-1.
+- Union of Two Sorted Arrays: Used a two-pointer approach (i, j) to compare elements at both indices, adding only unique elements to the result array.
+## 🔢 Algorithmic Insight
+- Rotation Logic: The Reversal Algorithm is the most space-efficient way to handle rotation. By manipulating indices directly, we avoid the [temp] + [array] copy operations that consume extra memory.
+- Merging Logic (Union): * If arr1[i] < arr2[j]: Add arr1[i] and increment i.
+- 1. If arr1[i] > arr2[j]: Add arr2[j] and increment j.
+- 2. If arr1[i] == arr2[j]: Add either and increment both.Constraint: Ensure uniqueness by checking the last added element before appending to the result list.
+
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)

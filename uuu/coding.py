@@ -1206,49 +1206,120 @@
 
 
 
-# DAY - 17
+# # DAY - 17
 
-# putting all the zeros in an array at the end
+# # putting all the zeros in an array at the end
 
-def move_zeros(nums):
-    write_pointer = 0
+# def move_zeros(nums):
+#     write_pointer = 0
     
-    # Iterate through the array
-    for read_pointer in range(len(nums)):
-        # If the current element is non-zero, swap it
-        if nums[read_pointer] != 0:
-            nums[write_pointer], nums[read_pointer] = nums[read_pointer], nums[write_pointer]
-            write_pointer += 1
+#     # Iterate through the array
+#     for read_pointer in range(len(nums)):
+#         # If the current element is non-zero, swap it
+#         if nums[read_pointer] != 0:
+#             nums[write_pointer], nums[read_pointer] = nums[read_pointer], nums[write_pointer]
+#             write_pointer += 1
             
-    return nums
+#     return nums
 
-# Example Usage:
-arr = [0, 1, 0, 3, 12]
-move_zeros(arr)
-print(arr) 
+# # Example Usage:
+# arr = [0, 1, 0, 3, 12]
+# move_zeros(arr)
+# print(arr) 
 
 
-#  left rotate an array by one place
+# #  left rotate an array by one place
 
-def left_rotate_by_one(arr):
-    # Handle empty or single-element arrays
-    if len(arr) <= 1:
-        return arr
+# def left_rotate_by_one(arr):
+#     # Handle empty or single-element arrays
+#     if len(arr) <= 1:
+#         return arr
     
-    # Step 1: Save the first element
-    temp = arr[0]
+#     # Step 1: Save the first element
+#     temp = arr[0]
     
-    # Step 2: Shift remaining elements to the left
-    for i in range(1, len(arr)):
-        arr[i-1] = arr[i]
+#     # Step 2: Shift remaining elements to the left
+#     for i in range(1, len(arr)):
+#         arr[i-1] = arr[i]
         
-    # Step 3: Put the first element at the end
-    arr[-1] = temp
+#     # Step 3: Put the first element at the end
+#     arr[-1] = temp
     
-    return arr
+#     return arr
 
-# Example Usage:
-my_list = [1, 2, 3, 4, 5]
-left_rotate_by_one(my_list)
-print(my_list)
+# # Example Usage:
+# my_list = [1, 2, 3, 4, 5]
+# left_rotate_by_one(my_list)
+# print(my_list)
 
+
+# DAY - 18
+
+
+# Alternate Numbers 
+
+def alternatenumber(arr):
+    n = len(arr)
+    ans = [0]*n
+    pi,ni = 0,1
+    for item in arr:
+        if item<0:
+            ans[ni] = item
+            ni +=2
+        else:
+            ans[pi] = item
+            pi += 2
+    return ans
+
+arr = [2,3,5,-8,-7,-6]
+a = alternatenumber(arr)
+print('arr of alternate number is',a)
+
+
+# Superior Element 
+
+def find_superior_elements(arr):
+    n = len(arr)
+    # The rightmost element is always a leader
+    leaders = []
+    max_so_far = float('-inf')
+    
+    # Traverse from right to left
+    for i in range(n - 1, -1, -1):
+        if arr[i] > max_so_far:
+            leaders.append(arr[i])
+            max_so_far = arr[i]
+            
+    # The list is currently in descending order of discovery (right to left)
+    # Reverse it to return elements in their original relative order
+    return leaders[::-1]
+
+# Example Usage
+arr = [10, 22, 12, 3, 0, 6]
+print(f"Superior Elements: {find_superior_elements(arr)}")
+
+# time complexity O(n)
+
+
+# OR
+
+# Less efficent as time complexity is O(n^^2)
+
+def find_superior_elements_simple(arr):
+    leaders = []
+    
+    for i in range(len(arr)):
+        is_leader = True
+        
+        for j in range(i + 1, len(arr)):
+            if arr[j] > arr[i]:
+                is_leader = False
+                break
+                
+        if is_leader:
+            leaders.append(arr[i])
+            
+    return leaders
+
+arr = [10, 22, 12, 3, 0, 6]
+print(f"Superior Elements: {find_superior_elements(arr)}")
