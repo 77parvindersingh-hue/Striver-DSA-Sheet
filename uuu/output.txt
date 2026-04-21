@@ -1,3 +1,2 @@
-arr of alternate number is [2, -8, 3, -7, 5, -6]
-Superior Elements: [22, 12, 6]
-Superior Elements: [22, 12, 6]
+[[1, 0, 3, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+[[1, 0, 3, 0], [0, 0, 0, 0], [0, 0, 0, 0]]

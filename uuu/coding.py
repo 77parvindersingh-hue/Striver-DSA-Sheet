@@ -1253,73 +1253,174 @@
 # print(my_list)
 
 
-# DAY - 18
+# # DAY - 18
 
 
-# Alternate Numbers 
+# # Alternate Numbers 
 
-def alternatenumber(arr):
-    n = len(arr)
-    ans = [0]*n
-    pi,ni = 0,1
-    for item in arr:
-        if item<0:
-            ans[ni] = item
-            ni +=2
-        else:
-            ans[pi] = item
-            pi += 2
-    return ans
+# def alternatenumber(arr):
+#     n = len(arr)
+#     ans = [0]*n
+#     pi,ni = 0,1
+#     for item in arr:
+#         if item<0:
+#             ans[ni] = item
+#             ni +=2
+#         else:
+#             ans[pi] = item
+#             pi += 2
+#     return ans
 
-arr = [2,3,5,-8,-7,-6]
-a = alternatenumber(arr)
-print('arr of alternate number is',a)
+# arr = [2,3,5,-8,-7,-6]
+# a = alternatenumber(arr)
+# print('arr of alternate number is',a)
 
 
-# Superior Element 
+# # Superior Element 
 
-def find_superior_elements(arr):
-    n = len(arr)
-    # The rightmost element is always a leader
-    leaders = []
-    max_so_far = float('-inf')
+# def find_superior_elements(arr):
+#     n = len(arr)
+#     # The rightmost element is always a leader
+#     leaders = []
+#     max_so_far = float('-inf')
     
-    # Traverse from right to left
-    for i in range(n - 1, -1, -1):
-        if arr[i] > max_so_far:
-            leaders.append(arr[i])
-            max_so_far = arr[i]
+#     # Traverse from right to left
+#     for i in range(n - 1, -1, -1):
+#         if arr[i] > max_so_far:
+#             leaders.append(arr[i])
+#             max_so_far = arr[i]
             
-    # The list is currently in descending order of discovery (right to left)
-    # Reverse it to return elements in their original relative order
-    return leaders[::-1]
+#     # The list is currently in descending order of discovery (right to left)
+#     # Reverse it to return elements in their original relative order
+#     return leaders[::-1]
 
-# Example Usage
-arr = [10, 22, 12, 3, 0, 6]
-print(f"Superior Elements: {find_superior_elements(arr)}")
+# # Example Usage
+# arr = [10, 22, 12, 3, 0, 6]
+# print(f"Superior Elements: {find_superior_elements(arr)}")
 
-# time complexity O(n)
+# # time complexity O(n)
+
+
+# # OR
+
+# # Less efficent as time complexity is O(n^^2)
+
+# def find_superior_elements_simple(arr):
+#     leaders = []
+    
+#     for i in range(len(arr)):
+#         is_leader = True
+        
+#         for j in range(i + 1, len(arr)):
+#             if arr[j] > arr[i]:
+#                 is_leader = False
+#                 break
+                
+#         if is_leader:
+#             leaders.append(arr[i])
+            
+#     return leaders
+
+# arr = [10, 22, 12, 3, 0, 6]
+# print(f"Superior Elements: {find_superior_elements(arr)}")
+
+
+# DAY - 19
+
+# Zero Matrix Problem 
+
+
+def setZeroes(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+    
+    # Flags for first row and first column
+    first_row_zero = False
+    first_col_zero = False
+    
+    # Check if first row has any zero
+    for j in range(cols):
+        if matrix[0][j] == 0:
+            first_row_zero = True
+            break
+            
+    # Check if first column has any zero
+    for i in range(rows):
+        if matrix[i][0] == 0:
+            first_col_zero = True
+            break
+            
+    # Use first row and col as markers for the rest of the matrix
+    for i in range(1, rows):
+        for j in range(1, cols):
+            if matrix[i][j] == 0:
+                matrix[i][0] = 0
+                matrix[0][j] = 0
+                
+    # Update the inner matrix based on markers
+    for i in range(1, rows):
+        for j in range(1, cols):
+            if matrix[i][0] == 0 or matrix[0][j] == 0:
+                matrix[i][j] = 0
+                
+    # Finally, update first row if needed
+    if first_row_zero:
+        for j in range(cols):
+            matrix[0][j] = 0
+            
+    # Finally, update first column if needed
+    if first_col_zero:
+        for i in range(rows):
+            matrix[i][0] = 0
+            
+    return matrix
+
+matrix = [
+  [1, 2, 3, 4],
+  [5, 0, 7, 8],
+  [9, 10, 11, 0]
+]
+
+ans = setZeroes(matrix)
+print(ans)
 
 
 # OR
 
-# Less efficent as time complexity is O(n^^2)
+# EASY METHOD 
 
-def find_superior_elements_simple(arr):
-    leaders = []
+
+def setZeroes_simple(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
     
-    for i in range(len(arr)):
-        is_leader = True
-        
-        for j in range(i + 1, len(arr)):
-            if arr[j] > arr[i]:
-                is_leader = False
-                break
+    zero_rows = set()
+    zero_cols = set()
+    
+    # Step 1: Find all zero positions
+    for i in range(rows):
+        for j in range(cols):
+            if matrix[i][j] == 0:
+                zero_rows.add(i)
+                zero_cols.add(j)
                 
-        if is_leader:
-            leaders.append(arr[i])
+    # Step 2: Set rows to zero
+    for i in zero_rows:
+        for j in range(cols):
+            matrix[i][j] = 0
             
-    return leaders
+    # Step 3: Set columns to zero
+    for j in zero_cols:
+        for i in range(rows):
+            matrix[i][j] = 0
+            
+    return matrix
 
-arr = [10, 22, 12, 3, 0, 6]
-print(f"Superior Elements: {find_superior_elements(arr)}")
+matrix = [
+  [1, 2, 3, 4],
+  [5, 0, 7, 8],
+  [9, 10, 11, 0]
+]
+
+ans = setZeroes(matrix)
+print(ans)  

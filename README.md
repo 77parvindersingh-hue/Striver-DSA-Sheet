@@ -168,6 +168,18 @@ AUR BHAI AKELE AKELE PADH RHA HAI DSA           PULL REQUEST ACCEPT MAARDE YEH W
 - 1. If arr1[i] > arr2[j]: Add arr2[j] and increment j.
 - 2. If arr1[i] == arr2[j]: Add either and increment both.Constraint: Ensure uniqueness by checking the last added element before appending to the result list.
 
+- **Day 19**: Array Problems - Missing Values & Sequential Patterns 📉
+- Find the Missing Number:
+- Approach: Used the formula $\text{Sum} = \frac{n(n+1)}{2}$. The missing number is the difference between this theoretical sum and the actual sum of the array elements.
+- Complexity: $O(N)$ Time, $O(1)$ Space.
+
+- Max Consecutive Ones:
+- Approach: Linear scan. If the element is 1, increment current_count. If 0, reset current_count to 0. Always update max_count to the maximum of itself and current_count.
+- Complexity: $O(N)$ Time, $O(1)$ Space.
+# 🔢 Algorithmic Insight
+- Optimization Logic: * The Missing Number problem is a classic example of using math to bypass iterations. If you used nested loops, you would hit $O(N^2)$; with the sum formula, you hit $O(N)$.
+- In Max Consecutive Ones, the key is the "reset" condition. By treating the array as a stream and only keeping two variables (current and max), we avoid the need for temporary storage entirely.
+
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)
