@@ -1325,102 +1325,183 @@
 # print(f"Superior Elements: {find_superior_elements(arr)}")
 
 
-# DAY - 19
+# # DAY - 19
 
-# Zero Matrix Problem 
+# # Zero Matrix Problem 
 
 
-def setZeroes(matrix):
-    rows = len(matrix)
-    cols = len(matrix[0])
+# def setZeroes(matrix):
+#     rows = len(matrix)
+#     cols = len(matrix[0])
     
-    # Flags for first row and first column
-    first_row_zero = False
-    first_col_zero = False
+#     # Flags for first row and first column
+#     first_row_zero = False
+#     first_col_zero = False
     
-    # Check if first row has any zero
-    for j in range(cols):
-        if matrix[0][j] == 0:
-            first_row_zero = True
-            break
+#     # Check if first row has any zero
+#     for j in range(cols):
+#         if matrix[0][j] == 0:
+#             first_row_zero = True
+#             break
             
-    # Check if first column has any zero
-    for i in range(rows):
-        if matrix[i][0] == 0:
-            first_col_zero = True
-            break
+#     # Check if first column has any zero
+#     for i in range(rows):
+#         if matrix[i][0] == 0:
+#             first_col_zero = True
+#             break
             
-    # Use first row and col as markers for the rest of the matrix
-    for i in range(1, rows):
-        for j in range(1, cols):
-            if matrix[i][j] == 0:
-                matrix[i][0] = 0
-                matrix[0][j] = 0
+#     # Use first row and col as markers for the rest of the matrix
+#     for i in range(1, rows):
+#         for j in range(1, cols):
+#             if matrix[i][j] == 0:
+#                 matrix[i][0] = 0
+#                 matrix[0][j] = 0
                 
-    # Update the inner matrix based on markers
-    for i in range(1, rows):
-        for j in range(1, cols):
-            if matrix[i][0] == 0 or matrix[0][j] == 0:
-                matrix[i][j] = 0
+#     # Update the inner matrix based on markers
+#     for i in range(1, rows):
+#         for j in range(1, cols):
+#             if matrix[i][0] == 0 or matrix[0][j] == 0:
+#                 matrix[i][j] = 0
                 
-    # Finally, update first row if needed
-    if first_row_zero:
-        for j in range(cols):
-            matrix[0][j] = 0
+#     # Finally, update first row if needed
+#     if first_row_zero:
+#         for j in range(cols):
+#             matrix[0][j] = 0
             
-    # Finally, update first column if needed
-    if first_col_zero:
-        for i in range(rows):
-            matrix[i][0] = 0
+#     # Finally, update first column if needed
+#     if first_col_zero:
+#         for i in range(rows):
+#             matrix[i][0] = 0
             
-    return matrix
+#     return matrix
 
-matrix = [
-  [1, 2, 3, 4],
-  [5, 0, 7, 8],
-  [9, 10, 11, 0]
-]
+# matrix = [
+#   [1, 2, 3, 4],
+#   [5, 0, 7, 8],
+#   [9, 10, 11, 0]
+# ]
 
-ans = setZeroes(matrix)
+# ans = setZeroes(matrix)
+# print(ans)
+
+
+# # OR
+
+# # EASY METHOD 
+
+
+# def setZeroes_simple(matrix):
+#     rows = len(matrix)
+#     cols = len(matrix[0])
+    
+#     zero_rows = set()
+#     zero_cols = set()
+    
+#     # Step 1: Find all zero positions
+#     for i in range(rows):
+#         for j in range(cols):
+#             if matrix[i][j] == 0:
+#                 zero_rows.add(i)
+#                 zero_cols.add(j)
+                
+#     # Step 2: Set rows to zero
+#     for i in zero_rows:
+#         for j in range(cols):
+#             matrix[i][j] = 0
+            
+#     # Step 3: Set columns to zero
+#     for j in zero_cols:
+#         for i in range(rows):
+#             matrix[i][j] = 0
+            
+#     return matrix
+
+# matrix = [
+#   [1, 2, 3, 4],
+#   [5, 0, 7, 8],
+#   [9, 10, 11, 0]
+# ]
+
+# ans = setZeroes(matrix)
+# print(ans)  
+
+
+
+# DAY - 20
+
+# BINARY SEARCH
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = low + (high - low) // 2
+        
+        # Check if target is present at mid
+        if arr[mid] == target:
+            return mid
+        
+        # If target is greater, ignore left half
+        elif arr[mid] < target:
+            low = mid + 1
+            
+        # If target is smaller, ignore right half
+        else:
+            high = mid - 1
+            
+    # Target not found
+    return -1
+
+arr = [1,2,3,4,5,6,7,8,9]
+ans = binary_search(arr,2)
 print(ans)
 
 
+# SEARCH INERT POSITION
+
+def searchInsert(nums, target):
+    # Iterate through the array
+    for i in range(len(nums)):
+        # If the current element is >= target, 
+        # this is the insertion point (or the element itself)
+        if nums[i] >= target:
+            return i
+            
+    # If we exit the loop, the target is larger than all elements
+    return len(nums)
+
+nums = [1,2,4,5,8,11,13,15]
+
+ans = searchInsert(nums,14)
+print(ans)  # It is simpler than binary search
+
 # OR
 
-# EASY METHOD 
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
 
-
-def setZeroes_simple(matrix):
-    rows = len(matrix)
-    cols = len(matrix[0])
-    
-    zero_rows = set()
-    zero_cols = set()
-    
-    # Step 1: Find all zero positions
-    for i in range(rows):
-        for j in range(cols):
-            if matrix[i][j] == 0:
-                zero_rows.add(i)
-                zero_cols.add(j)
-                
-    # Step 2: Set rows to zero
-    for i in zero_rows:
-        for j in range(cols):
-            matrix[i][j] = 0
+    while low <= high:
+        mid = low + (high - low) // 2
+        
+        # Check if target is present at mid
+        if arr[mid] == target:
+            return mid
+        
+        # If target is greater, ignore left half
+        elif arr[mid] < target:
+            low = mid + 1
             
-    # Step 3: Set columns to zero
-    for j in zero_cols:
-        for i in range(rows):
-            matrix[i][j] = 0
+        # If target is smaller, ignore right half
+        else:
+            high = mid - 1
             
-    return matrix
+    # Target not found
+    return -1
 
-matrix = [
-  [1, 2, 3, 4],
-  [5, 0, 7, 8],
-  [9, 10, 11, 0]
-]
 
-ans = setZeroes(matrix)
-print(ans)  
+nums = [1,2,4,5,8,11,13,15]
+
+ans = searchInsert(nums,14)
+print(ans)

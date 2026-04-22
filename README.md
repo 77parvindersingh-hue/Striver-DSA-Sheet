@@ -180,6 +180,19 @@ AUR BHAI AKELE AKELE PADH RHA HAI DSA           PULL REQUEST ACCEPT MAARDE YEH W
 - Optimization Logic: * The Missing Number problem is a classic example of using math to bypass iterations. If you used nested loops, you would hit $O(N^2)$; with the sum formula, you hit $O(N)$.
 - In Max Consecutive Ones, the key is the "reset" condition. By treating the array as a stream and only keeping two variables (current and max), we avoid the need for temporary storage entirely.
 
+- **Day 20**: Subarray Optimization - Longest Subarray with Sum K 🧩
+- Problem: Find the length of the longest subarray that sums up to $K$.
+- Approaches:
+- Hashing (Prefix Sums): Calculate the prefix sum up to index i. If (prefix_sum - K) exists in the map, a subarray exists.
+- Complexity: $O(N)$ Time, $O(N)$ Space.
+- Two-Pointer (Sliding Window): Maintain a right pointer to expand the sum and a left pointer to shrink it if the sum exceeds $K$.
+- Complexity: $O(2N)$ Time, $O(1)$ Space (Optimal for positives).
+## 🔢 Algorithmic Insight
+- The Sliding Window Logic: The two-pointer method works like a "flexible box."
+- If the sum is smaller than $K$, expand the box to the right.
+- If the sum is larger than $K$, shrink the box from the left until the sum is $\le K$.
+- Why it matters: This pattern is the foundation for almost all "Window" problems (e.g., Longest Substring without repeating characters).
+
 ## 🔗 Connect with Me
 - **LinkedIn**: https://www.linkedin.com/in/parvindersinghbagga/
 - **University**: Guru Tegh Bahadur Institute of Technology (GTBIT)
